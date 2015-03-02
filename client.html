@@ -10,8 +10,8 @@
 	<body>
 		<header id="header">
 			<div id="topo">
-				<h1>autoNomos</h1>
 				<br>
+				<h1><a href="index.html">autoNomos</a></h1>
 				<h3>Preencha o formulario e evie, responderemos em até 72h.</h3>
 			</div>
 		</header>
@@ -19,7 +19,7 @@
 		<section>
 		<form>
 			<div id="formCliente">
-			<table>
+			<table align="center">
 				<tr>
 					<td>Nome:<input type="text" name="nome" maxlength="50" size="44"/></td>
 				</tr>
@@ -34,11 +34,15 @@
 							<input type="radio"  name="sexo" value="feminino"/>Feminino
 					</td>
 				</tr>
+					<tr>
+						<td>Quer brincar na neve?:<input type="radio" name="brinks" value="sim" />Sim
+							<input type="radio"  name="brinks" value="nao"/>Não</td>
+					</tr>
 				<tr>
 					<td><textarea placeholder="Escreva aqui sua duvida" name="duvida" rows="8" cols="40" ></textarea></td>
 				</tr>
-				<tr>
-					<td><input type="submit" value="Enviar" /><input type="reset" value="Limpar" /></td>
+				<tr align="center">
+					<td class="botao"><input type="submit" value="Enviar" /> <input type="reset" value="Limpar" /></td>
 				</tr>
 			</table>
 			</div>

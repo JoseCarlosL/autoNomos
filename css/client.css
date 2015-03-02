@@ -296,10 +296,6 @@ input[type="submit"],
 			opacity: 0.25;
 		}
 		
-#header .container {
-			position: relative;
-		}
-
-			#header .container h1 {
-				left: 0;
-			}
+#topo{
+	text-align: center;
+}
