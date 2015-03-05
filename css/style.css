@@ -8,6 +8,11 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
+/*
+Esse template foi adaptado de acordo 
+com as necessidades do site.
+*/
+
 /* Basic */
 
 	body {
@@ -49,7 +54,7 @@
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
+		 
 		letter-spacing: 0.125em;
 	}
 
@@ -437,7 +442,7 @@
 		.icon.major {
 			display: inline-block;
 			margin: 0 0 1.25em 0;
-			color: #FF7F50;
+			color: #B22222;
 			background: #629DD1;
 			width: 3em;
 			height: 3em;
@@ -978,7 +983,7 @@
 
 	#banner {
 		background-color: #666666;
-		background-image: url("../images/banner.jpg");
+		background-image: url("../img/imagem.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
