@@ -1,18 +1,3 @@
-startList = function(){
-	if(document.all&&document.getElementById){
-		navRoot = document.getElementById("menuDrop");
-		for(i=0; i<navRoot.childNodes.length; i++){
-			node = navRoot.childNodes[i];
-			
-			if(node.nodeName=="LI"){
-				node.onmouseover = function(){
-					this.className +=" over";
-				}
-				node.onmouseout = function(){
-					this.className = this.className.replace(" over","");
-				}
-			}
-		}
-	}
+function load_home(){
+	document.getElementById("content").innerHTML='<object type="text/html" data="contato.html"></object>';
 }
-window.onload = startList;

@@ -136,17 +136,6 @@ body {
 	}
 	
 /*pagina*/
-#header{
-	border-bottom: 1px solid black;
-}
-
-#menu{
-	padding-top: 45px;
-}
-
-#footer{
-	border-top: 1px solid black;
-}
 
 /*CSS menu*/
 
@@ -206,7 +195,7 @@ body {
 #cssmenu {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
-  width: 200px;
+  width: 240px;
 }
 #cssmenu ul a,
 #cssmenu ul a:link,
@@ -223,16 +212,16 @@ body {
   background: #fff;
 }
 #cssmenu > ul > li {
-  border-left: 3px solid #d7d8da;
+  border-left: 3px solid #fff;
 }
 #cssmenu > ul > li > a {
   padding: 10px 20px;
 }
 #cssmenu > ul > li:hover {
-  border-left: 3px solid #3dbd99;
+  border-left: 3px solid #66CCFFF;
 }
 #cssmenu ul li:hover > a {
-  color: #3dbd99;
+  color: #66CCFF;
 }
 #cssmenu > ul > li:hover {
   background: #f6f6f6;
@@ -250,7 +239,7 @@ body {
 }
 #cssmenu ul ul a {
   padding: 8px 0;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #000;
 }
 #cssmenu ul ul li {
   padding: 0 20px;
@@ -282,6 +271,21 @@ body {
 
 fieldset{
 	border: 1px solid #C5C7C8;
-	width: 80%;
-	height: 80%;
+	width: 50%;
+	height: 50%;
+}
+
+#header{
+	background: #fff;
+	padding: 3px;
+	padding-left: 0px;
+}
+
+#footer{
+	background: #FFF;
+}
+
+#content div{
+	width: 500px;
+	height: 500px;
 }
