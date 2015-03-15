@@ -33,13 +33,7 @@
 		}
 
 		.container.big {
-			width: 100%;
-
-			/* max-width: (containers) * 1.25; */
-			max-width: 1500px;
-
-			/* min-width: (containers); */
-			min-width: 1200px;
+			
 		}
 
 /* Grid */
