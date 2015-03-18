@@ -285,7 +285,14 @@ fieldset{
 	background: #FFF;
 }
 
-#content div{
-	width: 500px;
-	height: 500px;
+#content{
+	width: 950px;
+}
+
+#mainframe{
+	height:800px;
+	width:810px;
+	float:right;
+	overflow:auto;
+	border:none;
 }
