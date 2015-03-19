@@ -11,7 +11,7 @@ body{
   -webkit-border-radius: 25px;
   -webkit-box-shadow: #6E7849 0 0 10px;
   -webkit-transition: all 0.5s ease;
-  background-color: #39a23d;
+  background-color: lightgreen;
   border-radius: 5px;
   border: 2px solid #4a5032;
   box-shadow: #6E7849 0px 0px 10px;
@@ -25,7 +25,7 @@ body{
   transition: all 0.5s ease;
 }
 .button:hover {
-  padding: 7px;
+  padding: 4px;
 }
 
 .button2 {
@@ -51,5 +51,10 @@ body{
   transition: all 0.5s ease;
 }
 .button2:hover {
-  padding: 7px;
+  padding: 4px;
+}
+
+fieldset{
+	width: 250px;
+	background: #fff;
 }
