@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Cliente autoNomos</title>
-		<meta charset="UTF-8" />
-		<link href="css/contato.css" type="text/css" rel="stylesheet" />
-		<script src="js/client.js" type="text/javascript"></script>
+		<title>Login</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
@@ -14,11 +15,8 @@
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
-
 	</head>
-	
-	
-		<body id="top">
+	<body id="top">
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
@@ -29,43 +27,38 @@
 						<li><a href="servicos.html">Serviços</a></li>
 						<li><a href="contato.html">Contato</a></li>
 						<li><a href="parceiros.html">Parceiros</a></li>
+						<li><a href="login.html" class="button special">ENTRAR</a></li>
 						
 					</ul>
 				</nav>
 			</header>
-		
-		<!-- Seção formulário de contato-->
+
+		<!-- Main -->
+			<section id="main" class="wrapper style1">
+				<header class="major">
+					<h2>Gostou dos nossos serviços? Quer marcar uma visita com o nosso consultor?</h2>
+					<h1>Essa é uma área reservada para você tirar dúvidas e marcar uma visita com os nossos consultores. Por favor, nos escreva.</h1>
+				</header>
+			</section>
+
+		<!-- Formulário Contato -->
 		<section>
 		<form>
-			<div id="formCliente">
-			<table align="center">
-				<tr>
-					<td>Nome:<input type="text" name="nome" maxlength="50" size="44"/></td>
-				</tr>
-				<tr>
-					<td>Email:<input type="email" name="mail" size="44" /></td>
-				</tr>
-				<tr>
-					<td>Fone:<input type="text" name="fone" maxlength="11" size="44" /></td>
-				</tr>
-					<tr>
-						<td>Quer brincar na neve?:<input type="radio" name="brinks" value="sim" />Sim
-							<input type="radio"  name="brinks" value="nao"/>Não</td>
-					</tr>
-				<tr>
-					<td><textarea placeholder="Escreva aqui sua duvida" name="duvida" rows="8" cols="40" ></textarea></td>
-				</tr>
-				<tr align="center">
-					<td class="botao"><input type="submit" value="Enviar" /> 
-									  <input type="reset" value="Limpar" /></td>
-				</tr>
-			</table>
+			<div id="formLogin">
+			<div align="center">
+				<tr><td><h4> Nome:</h4><input type="text" name="nome" maxlength="50" size="44"/></td></tr><br>
+				<tr><td><h4> E-mail: </h4> <input type="text" name="email" size="44" /></td></tr><br>
+				<tr><td><h4> Telefone para contato: </h4> <input type="text" name="telefone" size="44" /></td></tr><br>
+				<tr><td><h4> Descreva sua dúvida: </h4> <input type="text" name="duvida" size="44" /></td></tr><br><br>
+				<ul class="actions"><li><a href="#" class="button alt">ENVIAR</a></li></ul></tr> 	
 			</div>
-		</form>
+			</div>
+		</form> <br> <br>
+
 		</section>
+
+				
 		
-		<footer>
-			
-		</footer>
+		
 	</body>
 </html>
