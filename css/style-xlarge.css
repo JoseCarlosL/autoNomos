@@ -1,13 +1,8 @@
-/*
-	Ion by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
-
 /* Esse css referencia a fonte das tags: body, input, select, textarea*/
 
 	body, input, select, textarea {
 		font-size: 12pt;
+		background-size: 40pt;
 	}
 
 /* Banner */
