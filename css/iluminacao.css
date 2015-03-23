@@ -1,5 +1,5 @@
 body{
-	background: gray;
+	background: #EEEEE0;
 }
 
 .button {
@@ -14,7 +14,6 @@ body{
   background-color: lightgreen;
   border-radius: 5px;
   border: 2px solid #4a5032;
-  box-shadow: #6E7849 0px 0px 10px;
   color: #ffffff;
   display: inline-block;
   font-size: 12px;
@@ -40,7 +39,6 @@ body{
   background-color: red;
   border-radius: 5px;
   border: 2px solid #4a5032;
-  box-shadow: #6E7849 0px 0px 10px;
   color: #ffffff;
   display: inline-block;
   font-size: 12px;
@@ -57,4 +55,5 @@ body{
 fieldset{
 	width: 250px;
 	background: #fff;
+	float: left;
 }
