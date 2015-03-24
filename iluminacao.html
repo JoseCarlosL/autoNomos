@@ -12,9 +12,9 @@
 				<legend>SALA</legend>
 				<ul>
 					<div id="sala">
-					<li>Luz alta <img id="status" src="img/status.png" /> <br><input class="button" type="button" value="Ligar" onclick="ligar1();"/> <input class="button2" type="button" value="Desligar" onclick="desligar1();"/></li>
-					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligar();"/> <input class="button2" type="button" value="Desligar"/></li>
-					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligar();"/> <input class="button2" type="button" value="Desligar"/></li>
+					<li>Luz alta <br><input class="button" type="button" value="Ligar" onclick="ligarSala1();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala1();"/>   <img id="status1" src="img/erro.png" /></li>
+					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligarSala2();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala2();"/>  <img id="status2" src="img/erro.png" /></li>
+					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligarSala3();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala3();"/>  <img id="status3" src="img/erro.png" /></li>
 					</div>	
 				</ul>
 			</fieldset>
@@ -22,18 +22,22 @@
 			<fieldset>
 				<legend>QUARTO</legend>
 				<ul>
-					<li>Luz alta <img id="statusq" src="img/status.png" /> <br><input class="button" type="button" value="Ligar" onclick="ligar2();"/> <input class="button2" type="button" value="Desligar" onclick="desligar2();"/></li>
-					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligar();"/> <input class="button2" type="button" value="Desligar"/></li>
-					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligar();"/> <input class="button2" type="button" value="Desligar"/></li>
+					<div id="quarto">
+					<li>Luz alta <br><input class="button" type="button" value="Ligar" onclick="ligarQuarto1();"/> <input class="button2" type="button" value="Desligar" onclick="desligarQuarto1();"/> <img id="statusq1" src="img/erro.png" /></li>
+					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligarQuarto2();"/> <input class="button2" type="button" value="Desligar" onclick="desligarQuarto2();"/> <img id="statusq2" src="img/erro.png" /></li>
+					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligarQuarto3();"/> <input class="button2" type="button" value="Desligar" onclick="desligarQuarto3();"/> <img id="statusq3" src="img/erro.png" /></li>
+					</div>
 				</ul>
 			</fieldset>
 			
 			<fieldset >
 				<legend>BANHEIRO</legend>
 				<ul>
-					<li>Luz alta <img id="statusb" src="img/status.png" /> <br><input class="button" type="button" value="Ligar" onclick="ligar3();"/> <input class="button2" type="button" value="Desligar" onclick="desligar3();"/></li>
-					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligar();"/> <input class="button2" type="button" value="Desligar"/></li>
-					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligar();"/> <input class="button2" type="button" value="Desligar"/></li>
+					<div id="banheiro">
+					<li>Luz alta <br><input class="button" type="button" value="Ligar" onclick="ligarBanheiro1();"/> <input class="button2" type="button" value="Desligar" onclick="desligarBanheiro1();"/> <img id="statusb1" src="img/erro.png" /></li>
+					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligarBanheiro2();"/> <input class="button2" type="button" value="Desligar" onclick="desligarBanheiro2();"/> <img id="statusb2" src="img/erro.png" /></li>
+					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligarBanheiro3();"/> <input class="button2" type="button" value="Desligar" onclick="desligarBanheiro3();"/> <img id="statusb3" src="img/erro.png" /></li>
+					</div>
 				</ul>
 			</fieldset>
 		</div>
