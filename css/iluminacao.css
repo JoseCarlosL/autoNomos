@@ -23,9 +23,6 @@ body{
   text-shadow: #000000 5px 5px 15px;
   transition: all 0.5s ease;
 }
-.button:hover {
-  padding: 4px;
-}
 
 .button2 {
   -moz-border-radius: 25px;
@@ -48,9 +45,6 @@ body{
   text-shadow: #000000 5px 5px 15px;
   transition: all 0.5s ease;
 }
-.button2:hover {
-  padding: 4px;
-}
 
 fieldset{
 	width: 250px;
@@ -59,5 +53,16 @@ fieldset{
 }
 
 #sala img{
-	width: 50px;
+    width: 25%;
+    margin-bottom: -10px;
+}
+
+#quarto img{
+    width: 25%;
+    margin-bottom: -10px;
+}
+
+#banheiro img{
+    width: 25%;
+    margin-bottom: -10px;
 }
