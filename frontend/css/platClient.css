@@ -1,0 +1,298 @@
+body {
+		background: #EEEEE0;
+	}
+
+	body, input, select, textarea {
+		color: #555f66;
+		font-family: "Roboto", Helvetica, sans-serif;
+		font-size: 14pt;
+		font-weight: 300;
+		line-height: 1.75em;
+	}
+
+	a {
+		color: #629DD1;
+		text-decoration: underline;
+	}
+
+		a:hover {
+			text-decoration: none;
+		}
+
+	strong, b {
+		color: #666f77;
+		font-weight: 500;
+	}
+
+	em, i {
+		font-style: italic;
+	}
+
+	p {
+		margin: 0 0 2em 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #666f77;
+		font-weight: 300;
+		line-height: 1em;
+		margin: 0 0 1em 0;
+		letter-spacing: 0.125em;
+	}
+
+		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+	h2 {
+		font-size: 1.5em;
+		line-height: 1.5em;
+	}
+
+	h3 {
+		font-size: 1.25em;
+		line-height: 1.5em;
+	}
+
+	h4 {
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+
+	h5 {
+		font-size: 0.9em;
+		line-height: 1.5em;
+	}
+
+	h6 {
+		font-size: 0.7em;
+		line-height: 1.5em;
+	}
+
+	sub {
+		font-size: 0.8em;
+		position: relative;
+		top: 0.5em;
+	}
+
+	sup {
+		font-size: 0.8em;
+		position: relative;
+		top: -0.5em;
+	}
+
+	hr {
+		border: 0;
+		border-bottom: solid 1px rgba(144, 144, 144, 0.25);
+		margin: 3em 0;
+	}
+
+		hr.major {
+			margin: 2em 0 5em 0;
+		}
+
+	blockquote {
+		border-left: solid 4px rgba(144, 144, 144, 0.25);
+		font-style: italic;
+		margin: 0 0 2em 0;
+		padding: 0.5em 0 0.5em 2em;
+	}
+
+	code {
+		background: rgba(144, 144, 144, 0.075);
+		border-radius: 6px;
+		border: solid 1px rgba(144, 144, 144, 0.25);
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 0 0.25em;
+		padding: 0.25em 0.65em;
+	}
+
+	pre {
+		-webkit-overflow-scrolling: touch;
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 0 0 2em 0;
+		overflow-x: auto;
+	}
+
+		pre code {
+			display: block;
+			line-height: 1.75em;
+			padding: 1em 1.5em;
+		}
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+	
+/*pagina*/
+
+/*CSS menu*/
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  float: left;
+}
+#cssmenu ul {
+  position: relative;
+  z-index: 597;
+  float: left;
+}
+#cssmenu ul li {
+  float: left;
+  min-height: 1px;
+  line-height: 1em;
+  vertical-align: middle;
+}
+#cssmenu ul li.hover,
+#cssmenu ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+#cssmenu ul ul {
+  margin-top: 1px;
+  visibility: hidden;
+  position: absolute;
+  top: 1px;
+  left: 99%;
+  z-index: 598;
+  width: 100%;
+}
+#cssmenu ul ul li {
+  float: none;
+}
+#cssmenu ul ul ul {
+  top: 1px;
+  left: 99%;
+}
+#cssmenu ul li:hover > ul {
+  visibility: visible;
+}
+#cssmenu ul li {
+  float: none;
+}
+#cssmenu ul ul li {
+  font-weight: normal;
+}
+/* Custom CSS Styles */
+#cssmenu {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  width: 240px;
+}
+#cssmenu ul a,
+#cssmenu ul a:link,
+#cssmenu ul a:visited {
+  display: block;
+  color: #848889;
+  text-decoration: none;
+  font-weight: 300;
+}
+#cssmenu > ul {
+  float: none;
+}
+#cssmenu ul {
+  background: #fff;
+}
+#cssmenu > ul > li {
+  border-left: 3px solid #fff;
+}
+#cssmenu > ul > li > a {
+  padding: 10px 20px;
+}
+#cssmenu > ul > li:hover {
+  border-left: 3px solid #66CCFFF;
+}
+#cssmenu ul li:hover > a {
+  color: #66CCFF;
+}
+#cssmenu > ul > li:hover {
+  background: #f6f6f6;
+}
+/* Sub Menu */
+#cssmenu ul ul a:link,
+#cssmenu ul ul a:visited {
+  font-weight: 400;
+  font-size: 14px;
+}
+#cssmenu ul ul {
+  width: 180px;
+  background: none;
+  border-left: 20px solid transparent;
+}
+#cssmenu ul ul a {
+  padding: 8px 0;
+  border-bottom: 1px solid #000;
+}
+#cssmenu ul ul li {
+  padding: 0 20px;
+  background: #fff;
+}
+#cssmenu ul ul li:last-child {
+  border-bottom: 3px solid #d7d8da;
+  padding-bottom: 10px;
+}
+#cssmenu ul ul li:first-child {
+  padding-top: 10px;
+}
+#cssmenu ul ul li:last-child > a {
+  border-bottom: none;
+}
+#cssmenu ul ul li:first-child:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -20px;
+  top: 13px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+
+fieldset{
+	border: 1px solid #C5C7C8;
+	width: 50%;
+	height: 50%;
+}
+
+#header{
+	background: #fff;
+	padding: 3px;
+	padding-left: 0px;
+}
+
+#footer{
+	background: #FFF;
+}
+
+#content{
+	width: 1100px;
+}
+
+#mainframe{
+	height:800px;
+	width:860px;
+	float:right;
+	overflow:auto;
+	border:none;
+}
