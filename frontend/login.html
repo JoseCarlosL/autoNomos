@@ -8,7 +8,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		
+		<script src="js/login.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.blz.js"></script>
 		<script src="js/skel-layers.min.js"></script>
@@ -35,27 +35,27 @@
 				</nav>
 			</header>
 
-		<!-- Main -->
-			<section id="main" class="wrapper style1">
-				<header class="major">
-					<h2>Faça o seu login e aproveite.</h2>
-					<p>Essa é a área de login dos nossos clientes. Seja bem-vindo e aproveite nossos serviços.</p>
-				</header>
-			</section>
+		
+			<header class="major">
+			</header>
+			
 		<!-- Formulário Login -->
 		<section>
-		<form>
-			<div id="formLogin">
+		<form >
+			<div id="formLogin" >
 			<div align="center">
+
+				<h1>Faça o seu login e aproveite.</h1>
+					<p>Essa é a área de login dos nossos clientes. Seja bem-vindo e aproveite nossos serviços.</p>
 				<tr>
-					<td><h4> E-mail:</h4><input type="text" name="email" placeholder="Seu e-mail aqui" maxlength="50" size="44"/></td>
+					<td><h4> E-mail:</h4><input type="text" name="email" id="email" placeholder="Seu e-mail aqui" maxlength="50" size="44"/></td>
 				</tr> </br>
 				<tr>
-					<td><h4> Senha: </h4> <input type="password" name="senha" placeholder="Sua senha aqui" size="44" /></td>
+					<td><h4> Senha: </h4> <input type="password" name="senha" id="senha" placeholder="Sua senha aqui" size="44" /></td>
 				</tr>
 				</br> <br>
 					<ul class="actions">
-						<li><a href="#" class="button alt">ENTRAR</a></li>
+						<li><a href="#" onClick="login.js/autenticacaoLogin()" class="button alt">ENTRAR</a></li>
 					</ul>
 				</tr> <br>
 				<h5> Se algo estiver errado com o seu login nos <a href="contato.html"><u>contacte</u></a>.</h5>
