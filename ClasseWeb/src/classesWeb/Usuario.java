@@ -1,14 +1,14 @@
 package classesWeb;
 
-public class Usuario {
+public class Usuario extends Pessoa {
 
 	private String senha;
-	private Pessoa pessoa;
 
-	public Usuario(String senha, Pessoa pessoa) {
-		super();
+	public Usuario(String senha, int id, String nome, String email,
+			String telefone, Endereco endereco) {
+		super(id, nome, email, telefone, endereco);
 		this.senha = senha;
-		this.pessoa = pessoa;
+
 	}
 
 	protected String getSenha() {
@@ -17,14 +17,6 @@ public class Usuario {
 
 	protected void setSenha(String senha) {
 		this.senha = senha;
-	}
-
-	protected Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	protected void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
 	}
 
 	protected void logar() {

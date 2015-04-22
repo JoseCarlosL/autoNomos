@@ -1,25 +1,20 @@
 package classesWeb;
 
+import java.util.Scanner;
+import java.sql.Date;
+
 public class Visitante extends Pessoa {
 
-	private Pessoa pessoa;
+	Scanner entrada = new Scanner(System.in);
 
-	public Visitante(String rua, String numero, String complemento,
-			String bairro, String cidade, String estado, String cep, int id,
-			String nome, String email, String telefone, String cpf,
-			Endereco endereco, Pessoa pessoa) {
+	public Visitante(int id, String nome, String email, String telefone,
+			String cpf, Endereco endereco) {
+		super(id, nome, email, telefone, endereco);
 
-		super(rua, numero, complemento, bairro, cidade, estado, cep, id, nome,
-				email, telefone, cpf, endereco);
-		this.pessoa = pessoa;
 	}
 
-	protected Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	protected void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+	public void solicitarAtendimento(int id_Visitante) {
+		// Atendimento atendimento = new Atendimento();
 	}
 
 }
