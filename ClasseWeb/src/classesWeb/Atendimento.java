@@ -3,16 +3,16 @@ package classesWeb;
 import java.util.Date;
 
 public class Atendimento {
-	
+
 	private int id;
 	private String data;
 	private int id_visitante;
 	private boolean atendido;
 	private String duvida;
-	
+
 	public Atendimento(int id, String data, int id_visitante, boolean atendido,
 			String duvida) {
-				this.id = id;
+		this.id = id;
 		this.data = data;
 		this.id_visitante = id_visitante;
 		this.atendido = atendido;
@@ -58,5 +58,5 @@ public class Atendimento {
 	protected void setDuvida(String duvida) {
 		this.duvida = duvida;
 	}
-	
+
 }
