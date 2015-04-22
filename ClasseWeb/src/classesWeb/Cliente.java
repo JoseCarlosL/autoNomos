@@ -3,7 +3,7 @@ package classesWeb;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Clientes extends Pessoa {
+public class Cliente extends Pessoa {
 
 	// lista de usuarios
 	List<Usuario> listaUsuarios = new ArrayList<Usuario>();
@@ -11,7 +11,7 @@ public class Clientes extends Pessoa {
 	Usuario usuario;
 	String cpf;
 
-	public Clientes(int id, String nome, String email, String telefone,
+	public Cliente(int id, String nome, String email, String telefone,
 			Endereco endereco, String cpf) {
 		super(id, nome, email, telefone, endereco);
 		this.cpf = cpf;
