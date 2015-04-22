@@ -6,17 +6,15 @@ public class Pessoa {
 	private String nome;
 	private String email;
 	private String telefone;
-	private String cpf;
 	private Endereco endereco;
 
 	public Pessoa(int id, String nome, String email, String telefone,
-			String cpf, Endereco endereco) {
+			Endereco endereco) {
 
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
-		this.cpf = cpf;
 		this.endereco = endereco;
 	}
 
@@ -50,14 +48,6 @@ public class Pessoa {
 
 	protected void setTelefone(String telefone) {
 		this.telefone = telefone;
-	}
-
-	protected String getCpf() {
-		return cpf;
-	}
-
-	protected void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	protected Endereco getEndereco() {

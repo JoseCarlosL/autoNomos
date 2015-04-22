@@ -1,22 +1,31 @@
 package classesWeb;
 
 public class Clientes extends Pessoa {
-	
-	//lista de usuarios
+
+	// lista de usuarios
 	Usuario usuario;
+	String cpf;
 
 	public Clientes(int id, String nome, String email, String telefone,
-			String cpf, Endereco endereco, String usuarios) {
-		super(id, nome, email, telefone, cpf, endereco);
+			Endereco endereco, String usuarios, String cpf) {
+		super(id, nome, email, telefone, endereco);
+		this.cpf = cpf;
+		}
 
-	}
-	
-	protected void setUsuario(Usuario usuario){
+	protected void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	protected Usuario getUsuario(){
+
+	protected Usuario getUsuario() {
 		return usuario;
+	}
+
+	protected void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	protected String getCpf() {
+		return cpf;
 	}
 
 	protected String registrarAcao() {
