@@ -5,12 +5,12 @@ import java.util.Date;
 public class Atendimento {
 	
 	private int id;
-	private Date data;
+	private String data;
 	private int id_visitante;
 	private boolean atendido;
 	private String duvida;
 	
-	public Atendimento(int id, Date data, int id_visitante, boolean atendido,
+	public Atendimento(int id, String data, int id_visitante, boolean atendido,
 			String duvida) {
 				this.id = id;
 		this.data = data;
@@ -27,11 +27,11 @@ public class Atendimento {
 		this.id = id;
 	}
 
-	protected Date getData() {
+	protected String getData() {
 		return data;
 	}
 
-	protected void setData(Date data) {
+	protected void setData(String data) {
 		this.data = data;
 	}
 
@@ -43,7 +43,7 @@ public class Atendimento {
 		this.id_visitante = id_visitante;
 	}
 
-	protected boolean isAtendido() {
+	protected boolean getAtendido() {
 		return atendido;
 	}
 
@@ -58,5 +58,5 @@ public class Atendimento {
 	protected void setDuvida(String duvida) {
 		this.duvida = duvida;
 	}
-
+	
 }

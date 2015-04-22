@@ -1,7 +1,7 @@
 package classesWeb;
 
-public class Pessoa extends Endereco {
-	
+public class Pessoa {
+
 	private int id;
 	private String nome;
 	private String email;
@@ -9,10 +9,9 @@ public class Pessoa extends Endereco {
 	private String cpf;
 	private Endereco endereco;
 
-	public Pessoa(String rua, String numero, String complemento, String bairro,
-			String cidade, String estado, String cep, int id, String nome,
-			String email, String telefone, String cpf, Endereco endereco) {
-		super(rua, numero, complemento, bairro, cidade, estado, cep);
+	public Pessoa(int id, String nome, String email, String telefone,
+			String cpf, Endereco endereco) {
+
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
