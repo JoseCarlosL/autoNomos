@@ -75,7 +75,5 @@ public class Endereco {
 	protected void setCep(String cep) {
 		this.cep = cep;
 	}
-	
-	
 
 }

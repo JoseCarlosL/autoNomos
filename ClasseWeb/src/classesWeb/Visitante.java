@@ -14,7 +14,7 @@ public class Visitante extends Pessoa {
 	}
 
 	public void solicitarAtendimento(int id_Visitante) {
-		
+		// Atendimento atendimento = new Atendimento();
 	}
 
 }
