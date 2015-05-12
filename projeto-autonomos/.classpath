@@ -8,7 +8,27 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/apache-tomcat-6.0.43/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/apache-tomcat-7.0.61/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Downloads/mysql-connector-java-5.1.35/mysql-connector-java-5.1.35-bin.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/websocket-api.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/tomcat7-websocket.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/ecj-4.4.2.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/annotations-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
