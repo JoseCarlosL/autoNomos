@@ -44,8 +44,9 @@ public class TesteBDonWEB extends HttpServlet {
 		EnergiaCrud crud = new EnergiaCrud();
 		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
 
-		try (Connection con = DriverManager.getConnection(url)) {
-
+		try {
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+			Connection con = DriverManager.getConnection(url);
 			List<Energia> contas = crud.Ler(con);
 			for (Energia ener : contas) {
 				System.out.println(ener);

@@ -40,6 +40,7 @@ public class ServletNovoFormularioContato extends HttpServlet {
 		PrintWriter r = response.getWriter();
 		r.println("Em breve entraremos em contato com você!");
 
+		//mostras console o que pegou
 		System.out.println(nome + email + telefone + dataEmTexto + duvida);
 
 	}

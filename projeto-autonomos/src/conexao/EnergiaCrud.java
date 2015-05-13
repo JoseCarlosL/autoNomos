@@ -39,7 +39,7 @@ public class EnergiaCrud {
 	public static void main(String[] args) throws SQLException {
 		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
 		try(Connection con = DriverManager.getConnection(url)){
-			
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			EnergiaCrud crud = new EnergiaCrud();
 			Energia en1 = new Energia(222, 11.11);
 			Energia en2 = new Energia(34.222, 456.4);
