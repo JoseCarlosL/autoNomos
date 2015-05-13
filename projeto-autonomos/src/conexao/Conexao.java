@@ -22,10 +22,7 @@ public class Conexao {
 			ResultSet rs = stm.executeQuery();
 			while(rs.next()){
 				status = rs.getString("valor");
-				System.out.println(status);
 			}
-			
-			status = "Conexao aberta";
 		}catch(SQLException e){
 			status = e.getMessage();
 		}catch (ClassNotFoundException e) {
