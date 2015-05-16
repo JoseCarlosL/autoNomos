@@ -30,5 +30,6 @@
 	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/catalina-ant.jar"/>
 	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/catalina.jar"/>
 	<classpathentry kind="lib" path="/home/limalira/Documentos/Programas em uso/apache-tomcat-7.0.61/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Haysa/Documents/autoNomos/projeto-autonomos/WebContent/mysql-connector-java-5.1.35-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

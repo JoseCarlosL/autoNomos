@@ -6,29 +6,26 @@ public class RelatoDeAtendimento {
 
 	private int id;
 	private String nome;
-
 	private String email;
 	private String telefone;
 	private String data;
-	private int id_visitante;
-	private boolean atendido;
+
+	// private boolean atendido;
 	private String duvida;
 
-	public RelatoDeAtendimento(int id, String nome, String email,
-			String telefone, String data, int id_visitante, boolean atendido,
-			String duvida) {
+	public RelatoDeAtendimento(String nome, String email,
+			String telefone, String data, String duvida) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 		this.data = data;
-		this.id_visitante = id_visitante;
-		this.atendido = atendido;
+		// this.atendido = atendido;
 		this.duvida = duvida;
 	}
-	
-	public RelatoDeAtendimento(){
-		
+
+	public RelatoDeAtendimento() {
+
 	}
 
 	protected int getId() {
@@ -63,7 +60,7 @@ public class RelatoDeAtendimento {
 		this.telefone = telefone;
 	}
 
-	protected String getData() {
+	public String getData() {
 		return data;
 	}
 
@@ -71,23 +68,7 @@ public class RelatoDeAtendimento {
 		this.data = data;
 	}
 
-	protected int getId_visitante() {
-		return id_visitante;
-	}
-
-	protected void setId_visitante(int id_visitante) {
-		this.id_visitante = id_visitante;
-	}
-
-	protected boolean getAtendido() {
-		return atendido;
-	}
-
-	protected void setAtendido(boolean atendido) {
-		this.atendido = atendido;
-	}
-
-	protected String getDuvida() {
+	public String getDuvida() {
 		return duvida;
 	}
 

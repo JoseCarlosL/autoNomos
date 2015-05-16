@@ -3,6 +3,7 @@ package java;
 public class Usuario extends Pessoa {
 
 	private String senha;
+	private String email;
 
 	public Usuario(String senha, int id, String nome, String email,
 			String telefone, Endereco endereco) {
@@ -19,6 +20,13 @@ public class Usuario extends Pessoa {
 		this.senha = senha;
 	}
 
+	protected String getEmail(){
+		return email;
+	}
+	
+	private void setEmail(){
+		this.email = email;
+	}
 	
 	public boolean validaSenha(String senha){
 		if(senha.equals(getSenha())){
