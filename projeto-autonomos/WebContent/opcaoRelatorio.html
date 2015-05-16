@@ -8,7 +8,7 @@
 	</head>
 	
 	<body>
-		<form>
+		<form action = "relatorio" method="post">
 			<div id="luzes">
 				<fieldset>
 					<legend>Gerar relatório de controle de luz</legend>
@@ -17,10 +17,10 @@
 						<td>Luz <input type="checkbox" name="luz" value="luz" /></td>
 					</tr>
 					<tr>
-						<td>do dia <input type="date" name="data" size="44" /></td>
+						<td>do dia <input type="date" name="dataInicio" size="44" /></td>
 					</tr>
 					<tr>
-						<td>ao dia <input type="date" name="data" size="44" /></td>
+						<td>ao dia <input type="date" name="dataFinal" size="44" /></td>
 					</tr>
 					<tr>
 						<td><input id="gerarLuz" type="submit" value="Gerar"/> <input type="reset" value="Limpar" /></td>
@@ -29,7 +29,6 @@
 				</fieldset>
 			
 			</div>
-			
 			<div id="agua">
 				
 				<fieldset>
