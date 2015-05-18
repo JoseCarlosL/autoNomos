@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import relatorioDeConsumo.DataInicioRelatorio;
 import conexao.Conexao;
 import conexao.Energia;
 import conexao.EnergiaCrud;
+import controladores.ControladorRelatorio;
 
 /**
  * Servlet implementation class TesteBDonWEB
@@ -25,30 +27,22 @@ import conexao.EnergiaCrud;
 public class TesteBDonWEB extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public TesteBDonWEB() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter();
-		EnergiaCrud crud = new EnergiaCrud();
+		ControladorRelatorio controle = new ControladorRelatorio();
 		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
 
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			Connection con = DriverManager.getConnection(url);
-			List<Energia> contas = crud.Ler(con);
-			for (Energia ener : contas) {
+			List<DataInicioRelatorio> contas = controle.procurarDataInicio(con);
+			for (DataInicioRelatorio ener : contas) {
 				System.out.println(ener);
 				out.println(ener);
 			}
@@ -57,15 +51,10 @@ public class TesteBDonWEB extends HttpServlet {
 			e.printStackTrace();
 		}
 
-	}
+	}//doGet
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+	}//doPost
 
 }

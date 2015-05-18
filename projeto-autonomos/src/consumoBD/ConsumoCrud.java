@@ -10,7 +10,7 @@ import java.util.List;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
-import relatorioDeConsumo.ConsumoDeEnergia;
+import relatorioDeConsumo.DataInicioRelatorio;
 
 public class ConsumoCrud {
 	
