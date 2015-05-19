@@ -87,23 +87,28 @@ public class ManipuladorBD {
 	public static void main(String[] args) throws SQLException, ParseException {
 		ManipuladorBD mani = new ManipuladorBD();
 		
-		String data = "2015-05-09";
+		String data = "2015-05-03";
 		String dataf = "2015-05-11";
 		
 		DataInicioRelatorio dates = new DataInicioRelatorio();
 		
-		String batata = mani.procurarDataInicial(data);
-		String queijo = mani.procurarDataFinal(dataf);
-		
-		String datar = batata;
+		String inicio = mani.procurarDataInicial(data);
+		String fim = mani.procurarDataFinal(dataf);
+		System.out.println(inicio);
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-		java.util.Date d = formatter.parse(datar);
-		
-		String dataz = queijo;
+		java.util.Date d = new Date (formatter.parse(inicio).getTime());
+		System.out.println(d);
+		System.out.println();
 		SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd");
-		java.util.Date a = formater.parse(dataz);
+		java.util.Date a = new Date (formater.parse(fim).getTime());
+		System.out.println(a);
+		System.out.println();
 		
-		System.out.println(batata + "\n" + queijo + "\n");
+		long resultado = a.getTime() - d.getTime();//compara o tempo entre as datas inicio e fim
+		long dias = resultado / 86400000L;//Divide o resultado para pegar apenas o dias de diferença
+		System.out.println(dias);
+		System.out.println();
+		System.out.println(inicio + "\n" + fim + "\n");
 		System.out.println(d.getTime() - a.getTime());
 	}
 }
