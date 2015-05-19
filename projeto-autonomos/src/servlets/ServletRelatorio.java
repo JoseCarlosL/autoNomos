@@ -29,6 +29,7 @@ public class ServletRelatorio extends HttpServlet {
 		
 		
 		try {
+			
 			SimpleDateFormat formate =  new SimpleDateFormat("yyyy-MM-dd");
 			Date dataInic = new Date(formate.parse(dataInicio).getTime());//converte a data inicial para Date
  			out.println(dataInic);

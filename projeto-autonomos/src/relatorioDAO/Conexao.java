@@ -12,12 +12,15 @@ import relatorioDeConsumo.DataInicioRelatorio;
 
 public class Conexao {
 	
-	public List<DataInicioRelatorio> procurarInicio(Connection con) throws SQLException{
+	public List<DataInicioRelatorio> procurarInicio(Connection con, DataInicioRelatorio dataInicio) throws SQLException{
 		List<DataInicioRelatorio> lista = new ArrayList<DataInicioRelatorio>();
 			
-		String sql = "select data from relatorio";
-			try(PreparedStatement stm = con.prepareStatement(sql);
-				ResultSet rs = stm.executeQuery()){
+		String sql = "select data from relatorio where data = (?)";
+			try {
+				
+				PreparedStatement stm = con.prepareStatement(sql);
+				stm.setDate(1, dataInicio.getDataInicio());
+				ResultSet rs = stm.executeQuery();
 				while(rs.next()){
 					lista.add(new DataInicioRelatorio(rs.getDate(1)));
 				}
@@ -39,4 +42,5 @@ public class Conexao {
 		
 		return lista;
 	}
+	
 }

@@ -16,4 +16,9 @@ public class DataFinalRelatorio {
 	public void setDataInicio(Date dataFinal) {
 		this.dataFinal = dataFinal;
 	}
+	
+	@Override
+	public String toString() {
+		return dataFinal+ " ,";
+	}
 }
