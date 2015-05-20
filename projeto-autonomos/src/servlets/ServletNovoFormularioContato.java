@@ -1,6 +1,5 @@
 package servlets;
 
-import java.RelatoDeAtendimento;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
@@ -9,12 +8,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import br.com.autonomos.modelo.RelatoDeAtendimento;
+import br.com.autonomos.modelox.servlet.ServletConfig;
+import br.com.autonomos.modelox.servlet.ServletException;
+import br.com.autonomos.modelox.servlet.annotation.WebServlet;
+import br.com.autonomos.modelox.servlet.http.HttpServlet;
+import br.com.autonomos.modelox.servlet.http.HttpServletRequest;
+import br.com.autonomos.modelox.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/contato")
 public class ServletNovoFormularioContato extends HttpServlet {

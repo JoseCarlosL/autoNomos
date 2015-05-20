@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <!--
 	Projeto PI II
 -->
@@ -11,8 +11,8 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/skel.blz.js"></script>
-
 <script src="js/init.js"></script>
+<script src="js.call-backs.js"></script>
 <noscript>
 	<link rel="stylesheet" href="css/skel.css" />
 	<link rel="stylesheet" href="css/style.css" />
@@ -32,7 +32,7 @@
 				<li><a href="servicos.html">Serviços</a></li>
 				<li><a href="contato.html">Contato</a></li>
 				<li><a href="parceiros.html">Parceiros</a></li>
-				<li><a href="login.html"    >Entrar</a></li>
+				<li><a href="login.html">Entrar</a></li>
 
 			</ul>
 		</nav>
@@ -43,26 +43,25 @@
 		<header class="major">
 			<h2>Gostou dos nossos serviços? Quer marcar uma visita com o
 				nosso consultor?</h2>
-			<h1>Essa é uma área reservada para você tirar dúvidas e marcar
-				uma visita com os nossos consultores. Por favor, nos escreva.</h1>
+			<h1>Essa é uma área reservada para você tirar dúvidas e
+				marcar uma visita com os nossos consultores. Por favor, nos escreva.</h1>
 		</header>
 	</section>
 
 	<!-- Formulário Contato -->
 	<section>
-		<form action="contato" method="post">
+		<form id="form_contato" name="contato" action="contato.jsp" method="post" onsubmit="return validaCamposEmBranco();">
 			<div id="formLogin">
 				<div align="center">
 					<tr>
-						<td><h4>Nome:</h4>
-							<input type="text" name="nome" placeholder="Seu nome aqui"
-							maxlength="50" size="44" /></td>
+						<td><h4>Nome:</h4> <input type="text" name="nome"
+							placeholder="Seu nome aqui"  maxlength="50" size="44" /></td>
 					</tr>
 					<br>
 
 					<tr>
 						<td><h4>E-mail:</h4> <input type="text" name="email"
-							placeholder="Seu e-mail aqui" size="44" /></td>
+							placeholder="Seu e-mail aqui"  size="44" /></td>
 					</tr>
 					<br>
 
@@ -76,17 +75,15 @@
 						<td><h4>Selecione a data para visita:</h4> <input type="date"
 							name="data" size="44" /></td>
 					</tr>
-					<br>
-					<br>
+					<br> <br>
 
 
 					<tr>
-						<td><h4>Descreva sua dúvida:</h4>
-							<textarea placeholder="Escreva sua duvida aqui" name="duvida"
-								rows="8" cols="40"></textarea></td>
+						<td><h4>Descreva sua dúvida:</h4> <textarea
+								placeholder="Escreva sua duvida aqui" name="duvida" rows="8"
+								cols="40"  ></textarea></td>
 					</tr>
-					<br>
-					<br>
+					<br> <br>
 
 					<ul class="actions">
 						<li><input type="submit" value="ENVIAR" /></li>

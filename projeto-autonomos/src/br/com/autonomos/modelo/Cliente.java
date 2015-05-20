@@ -1,4 +1,4 @@
-package java;
+package br.com.autonomos.modelo;
 
 import java.util.ArrayList;
 import java.util.List;

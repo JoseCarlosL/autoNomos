@@ -1,4 +1,4 @@
-package java;
+package br.com.autonomos.modelo;
 
 public class Usuario extends Pessoa {
 

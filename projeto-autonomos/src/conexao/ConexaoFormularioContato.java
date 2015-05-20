@@ -1,10 +1,11 @@
 package conexao;
 
-import java.RelatoDeAtendimento;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import br.com.autonomos.modelo.RelatoDeAtendimento;
 
 public class ConexaoFormularioContato {
 
