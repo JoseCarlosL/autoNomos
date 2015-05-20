@@ -7,10 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
-import relatorioDeConsumo.ConsumoDeEnergia;
+import relatorioDeConsumo.DataInicioRelatorio;
 
 public class ConsumoCrud {
 	
@@ -59,12 +60,10 @@ public class ConsumoCrud {
 					SimpleDateFormat formatas = new SimpleDateFormat(dataz);
 					String data = formatas.format(valorDoBanco);
 					lista.add(data);
-					System.out.println(data);
 				}
 		} finally {
 			closeConnnection(conne);
 		}
-		
 		
 		return lista;
 		
@@ -72,8 +71,14 @@ public class ConsumoCrud {
 	
 	public static void main(String[] args) throws SQLException {
 		
-		ConsumoCrud crud = new ConsumoCrud();
-		crud.procurar("2015-06-10");
+		Scanner leia = new Scanner(System.in);
+		String data;
 		
+		ConsumoCrud crud = new ConsumoCrud();
+		
+		System.out.println("informe a data: ");
+		data = leia.next();
+		List<String> chati = crud.procurar(data);
+		System.out.println(chati);
 	}
 }

@@ -20,32 +20,27 @@ import br.com.autonomos.modelox.servlet.http.HttpServletResponse;
 public class ServletRelatorio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-	}
-	
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out = response.getWriter();
 		String luz = request.getParameter("luz");
 		String dataInicio = request.getParameter("dataInicio"); 
 		String dataFinal = request.getParameter("dataFinal");
-		
+		out.println(dataFinal);
 		
 		try {
+			
 			SimpleDateFormat formate =  new SimpleDateFormat("yyyy-MM-dd");
 			Date dataInic = new Date(formate.parse(dataInicio).getTime());//converte a data inicial para Date
  			out.println(dataInic);
-			Date dataFin = new Date(formate.parse(dataFinal).getTime());//converte a data final para Date
+			
+ 			Date dataFin = new Date(formate.parse(dataFinal).getTime());//converte a data final para Date
 			out.println(dataFin);
+			out.println(dataFin.getTime());
 			
 			long resultado = dataFin.getTime() - dataInic.getTime();//compara o tempo entre as datas inicio e fim
 			long dias = resultado / 86400000L;//Divide o resultado para pegar apenas o dias de diferença
+			
 			out.println(dias);
 			out.println(dataFin.compareTo(dataInic));
 			
