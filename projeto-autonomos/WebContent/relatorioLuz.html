@@ -1,3 +1,5 @@
+<%@ pageimport="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding = "ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -8,6 +10,7 @@
 	</head>
 	<body>
 		<header>
+		<form action = "relatorioLuz">
 			<div class="container">
 				<h1>autoNomos - ecoHome</h1>
 			</div>
@@ -17,19 +20,20 @@
 				<h2>Consumo de energia</h2>
 				<table>
 					<tr>
-						<th>Mês</th>
 						<th>Período</th>
 						<th>Gastos (Kw)</th>
 						<th>Valor em R$</th>
 					</tr>
+					<% 
+					ManipuladorBD manipulador = new ManipuladorBD();
+					String inicio = manipulador.procurarData("2015-05-10");
+					%>
 					<tr class="paciente">
-						<td class="info-nome">Janeiro</td>
-						<td class="info-peso" id="peso-1">01/01/2015 a 30/01/2015</td>
+						<td class="info-peso" id="peso-1"><%=inicio%></td>
 						<td class="info-altura" id="altura-1">4000,54</td>
 						<td class="info-imc" id="imc-1">250,18</td>
 					</tr>
 					<tr class="paciente">
-						<td class="info-nome">Fevereiro a Março</td>
 						<td class="info-peso" id="peso-2">10/02/2015 a 10/03/2015</td>
 						<td class="info-altura" id="altura-2">80000</td>
 						<td class="info-imc" id="imc-2">978,32</td>
@@ -39,7 +43,7 @@
 				<button id="calcula-imcs" class="botao ">Imprimir Relatório</button>
 			
 			</section>
-			
+			</form>
 	</body>
 </html>
 
