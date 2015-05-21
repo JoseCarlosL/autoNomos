@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="relatorioDeConsumo.DataFinalRelatorio"%>
+<%@page import="java.util.List"%>
 <%@page import="controladores.ManipuladorBD"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,19 +28,26 @@
 			<th>Valor em R$</th>
 		</tr>
 		<%
-			String datap;
-			String data;
+		ManipuladorBD manipulador = new ManipuladorBD();
+		DataFinalRelatorio data = new DataFinalRelatorio();
+		List<DataFinalRelatorio> finalDate = new ArrayList<DataFinalRelatorio>();
 		%>
 		<%
-			ManipuladorBD manipulador = new ManipuladorBD();
-			datap = "2015-05-01";
-			data = manipulador.procurarDataFinal(datap);
+			finalDate = manipulador.procurarDataFinal("2015-05-01");
+			
+			for(DataFinalRelatorio f: manipulador.listFinal){
+				
+			
+		
 		%>
 		<tr class="paciente">
-			<td class="info-peso" id="peso-1"><%=data%></td>
-			<td class="info-altura" id="altura-1"><%=data.indexOf(1)%></td>
-			<td class="info-imc" id="imc-1"><%=data.indexOf(2) %>></td>
+			<td class="info-peso" id="peso-1">01-05-2015 até <%=f.getDataFinal()%></td>
+			<td class="info-altura" id="altura-1"><%=f.getKilowatt()%></td>
+			<td class="info-imc" id="imc-1"><%=f.getValor()%></td>
 		</tr>
+		
+		<% } %>
+			
 		<tr class="paciente">
 			<td class="info-peso" id="peso-2">10/02/2015 a 10/03/2015</td>
 			<td class="info-altura" id="altura-2">80000</td>

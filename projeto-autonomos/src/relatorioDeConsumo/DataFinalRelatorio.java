@@ -3,22 +3,53 @@ package relatorioDeConsumo;
 import java.util.Date;
 
 public class DataFinalRelatorio {
-	private Date dataFinal;
 	
-	public DataFinalRelatorio(Date dataFinal) {
-		this.dataFinal = dataFinal;
-	}
+	private Date dataFinal;
+	private double kilowatt;
+	private double valor;
+	
+	public DataFinalRelatorio() {
 
-	public Date getDataInicio() {
+	}
+	
+	public DataFinalRelatorio(Date datafinal, double kw, double valor){
+		this.dataFinal = datafinal;
+		this.kilowatt = kw;
+		this.valor = valor;
+	}
+	
+	public Date getDataFinal() {
 		return dataFinal;
 	}
 
-	public void setDataInicio(Date dataFinal) {
+
+	public void setDataFinal(Date dataFinal) {
 		this.dataFinal = dataFinal;
 	}
-	
+
+
+	public double getKilowatt() {
+		return kilowatt;
+	}
+
+
+	public void setKilowatt(double kilowatt) {
+		this.kilowatt = kilowatt;
+	}
+
+
+	public double getValor() {
+		return valor;
+	}
+
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+
 	@Override
 	public String toString() {
-		return dataFinal+ " ,";
+		return dataFinal+ " ," + kilowatt + " , " + valor +"\n";
 	}
 }
