@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 
 import javax.swing.JOptionPane;
 
+import br.com.autonomos.relatorioConsumo.ValoresDeBusca;
 import relatorioDeConsumo.DataFinalRelatorio;
 import relatorioDeConsumo.DataInicioRelatorio;
 
@@ -104,6 +105,10 @@ public class ManipuladorBD {
 	
 	public List<DataInicioRelatorio> listInicial = new ArrayList<DataInicioRelatorio>();
 	
+	public List<ValoresDeBusca> listValorBusca = new ArrayList<ValoresDeBusca>();
+	
+	static double soma;
+	
 	public List<DataInicioRelatorio> procurarDataInicial(String data) throws SQLException{
 		
 		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
@@ -161,26 +166,30 @@ public class ManipuladorBD {
 
 	}// BUSCAR DATA FINAL
 	
-	public void buscador (String data1, String data2) throws SQLException{
+	public List<ValoresDeBusca> buscador (String date1, String date2) throws SQLException{
 		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
-		DataInicioRelatorio ini = new DataInicioRelatorio();
-		DataFinalRelatorio fin = new DataFinalRelatorio();
+		String sss = "select sum(kilowatt), sum(valor) from consumo where data between (?) and (?)";
 		
+		ValoresDeBusca valorBusca = new ValoresDeBusca();
+		Connection conn;
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-			Connection conn = DriverManager.getConnection(url);
-			PreparedStatement stm = conn.prepareStatement("select sum(kilowatt) from consumo where between = (?) and = (?)");
-			stm.setString(1, data1);
-			stm.setString(2, data2);
+			conn = DriverManager.getConnection(url);
+			PreparedStatement stm = conn.prepareStatement(sss);
+			stm.setString(1, date1);
+			stm.setString(2, date2);
 			ResultSet rs = stm.executeQuery();
 			while (rs.next()) {
-				ini.setKilowatt(rs.getDouble(1));
-				System.out.println(ini);
+				valorBusca.setKilowatt(rs.getDouble(1));
+				valorBusca.setValor(rs.getDouble(2));
+				listValorBusca.add(valorBusca);
+				System.out.println(valorBusca);
 			}
 		} finally {
 			//closeConnection(con);
 		}
-
+		
+		return listValorBusca;
 	}
 
 	public static void main(String[] args) throws SQLException, ParseException {
@@ -219,9 +228,9 @@ public class ManipuladorBD {
 		
 		System.out.println("\n ------------------------ \n");
 		
-		mani.buscador("2015-05-01", "2015-05-05");
+	 mani.buscador("2015-05-01","2015-05-05");
 		
-		System.out.println(mani);
+		System.out.println(soma);
 
 	/*	String data = "2015-05-01";
 		String dataf = "2015-05-10";

@@ -1,3 +1,4 @@
+<%@page import="br.com.autonomos.relatorioConsumo.ValoresDeBusca"%>
 <%@page import="relatorioDeConsumo.DataInicioRelatorio"%>
 <%@page import="br.com.autonomos.controlador.ManipuladorBD"%>
 <%@page import="java.util.ArrayList"%>
@@ -16,7 +17,7 @@
 </head>
 <body>
 	<header>
-	<form action="relatorioLuz">
+	<form action="relatorio" method="post">
 		<div class="container">
 			<h1>autoNomos - ecoHome</h1>
 		</div>
@@ -31,27 +32,31 @@
 		</tr>
 		<%
 		ManipuladorBD manipulador = new ManipuladorBD();
-		DataFinalRelatorio data = new DataFinalRelatorio();
-		DataInicioRelatorio date = new DataInicioRelatorio();
-		List<DataInicioRelatorio> inicialDate = new ArrayList<DataInicioRelatorio>();
-		List<DataFinalRelatorio> finalDate = new ArrayList<DataFinalRelatorio>();
+		ValoresDeBusca valorBusca = new ValoresDeBusca();
+		
+		String dataInicio = "2015-05-01"; 
+		String dataFinal = "2015-05-10";
 		%>
 		<%
-			finalDate = manipulador.procurarDataFinal("2015-05-01");
-			inicialDate = manipulador.procurarDataInicial("2015-05-10");
-			for(DataFinalRelatorio f: manipulador.listFinal){
-				for(DataInicioRelatorio x : manipulador.listInicial){
+			//finalDate = manipulador.procurarDataFinal("2015-05-01");
+			//inicialDate = manipulador.procurarDataInicial("2015-05-10");
+			
+			
+			manipulador.buscador(dataInicio, dataFinal);
+			
+			for(ValoresDeBusca f: manipulador.listValorBusca){
 			
 		
 		%>
 		<tr class="paciente">
-			<td class="info-peso" id="peso-1"><%=x.getDataInicio() %><p> até </p><%=f.getDataFinal()%></td>
+			<td class="info-peso" id="peso-1"><%= dataInicio %><p> até </p><%= dataFinal %></td>
 			<td class="info-altura" id="altura-1"><%=f.getKilowatt()%></td>
 			<td class="info-imc" id="imc-1"><%=f.getValor()%></td>
 		</tr>
 		
-		<% } 
-		}%>
+		<% 
+		} 
+		%>
 			
 		<tr class="paciente">
 			<td class="info-peso" id="peso-2">10/02/2015 a 10/03/2015</td>
