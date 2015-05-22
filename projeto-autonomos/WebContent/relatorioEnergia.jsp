@@ -1,7 +1,9 @@
+<%@page import="relatorioDeConsumo.DataInicioRelatorio"%>
+<%@page import="br.com.autonomos.controlador.ManipuladorBD"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="relatorioDeConsumo.DataFinalRelatorio"%>
 <%@page import="java.util.List"%>
-<%@page import="controladores.ManipuladorBD"%>
+<%@page import="br.com.autonomos.controlador.ManipuladorBD"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -30,23 +32,26 @@
 		<%
 		ManipuladorBD manipulador = new ManipuladorBD();
 		DataFinalRelatorio data = new DataFinalRelatorio();
+		DataInicioRelatorio date = new DataInicioRelatorio();
+		List<DataInicioRelatorio> inicialDate = new ArrayList<DataInicioRelatorio>();
 		List<DataFinalRelatorio> finalDate = new ArrayList<DataFinalRelatorio>();
 		%>
 		<%
 			finalDate = manipulador.procurarDataFinal("2015-05-01");
-			
+			inicialDate = manipulador.procurarDataInicial("2015-05-10");
 			for(DataFinalRelatorio f: manipulador.listFinal){
-				
+				for(DataInicioRelatorio x : manipulador.listInicial){
 			
 		
 		%>
 		<tr class="paciente">
-			<td class="info-peso" id="peso-1">01-05-2015 até <%=f.getDataFinal()%></td>
+			<td class="info-peso" id="peso-1"><%=x.getDataInicio() %><p> até </p><%=f.getDataFinal()%></td>
 			<td class="info-altura" id="altura-1"><%=f.getKilowatt()%></td>
 			<td class="info-imc" id="imc-1"><%=f.getValor()%></td>
 		</tr>
 		
-		<% } %>
+		<% } 
+		}%>
 			
 		<tr class="paciente">
 			<td class="info-peso" id="peso-2">10/02/2015 a 10/03/2015</td>

@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.sql.Date;
 import java.text.ParseException;
@@ -36,7 +37,7 @@ public class ManipuladorBD {
 		}
 	}// CLOSE*/
 
-	public String procurarDataInicial(String datap) throws SQLException {
+/*	public String procurarDataInicial(String datap) throws SQLException {
 		String dataRetorno = null;
 		String sql = "select data, kilowatt from consumo where data = (?)";
 		Connection conne = null;
@@ -60,7 +61,7 @@ public class ManipuladorBD {
 		return dataRetorno;
 
 	}// BUSCAR DATA INICIAL
-
+*/
 	/*public String procurarDataFinal(String datap) throws SQLException {
 		Connection con = null;
 		String dataRetorno = null;
@@ -111,9 +112,25 @@ public class ManipuladorBD {
 		try{
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			Connection conn = DriverManager.getConnection(url);
+			PreparedStatement stm = conn.prepareStatement(BUSCA_DATA_INICIO);
+			stm.setString(1, data);
+			ResultSet rs = stm.executeQuery();
+			while(rs.next()){
+				inicialDate.setDataInicio(rs.getDate("data"));
+				inicialDate.setKilowatt(rs.getDouble("kilowatt"));
+				inicialDate.setValor(rs.getDouble("valor"));
+				
+				listInicial.add(inicialDate);
+				System.out.println(inicialDate);
+			}
+		}finally{
+			//closeConnection(con);
 		}
+		
+		return listInicial;
 	}
 	
+	static long dias;
 	
 	public List<DataFinalRelatorio> procurarDataFinal(String data) throws SQLException {
 		
@@ -143,6 +160,28 @@ public class ManipuladorBD {
 		return listFinal;
 
 	}// BUSCAR DATA FINAL
+	
+	public void buscador (String data1, String data2) throws SQLException{
+		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
+		DataInicioRelatorio ini = new DataInicioRelatorio();
+		DataFinalRelatorio fin = new DataFinalRelatorio();
+		
+		try {
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+			Connection conn = DriverManager.getConnection(url);
+			PreparedStatement stm = conn.prepareStatement("select sum(kilowatt) from consumo where between = (?) and = (?)");
+			stm.setString(1, data1);
+			stm.setString(2, data2);
+			ResultSet rs = stm.executeQuery();
+			while (rs.next()) {
+				ini.setKilowatt(rs.getDouble(1));
+				System.out.println(ini);
+			}
+		} finally {
+			//closeConnection(con);
+		}
+
+	}
 
 	public static void main(String[] args) throws SQLException, ParseException {
 		ManipuladorBD mani = new ManipuladorBD();
@@ -150,15 +189,39 @@ public class ManipuladorBD {
 		String data = "2015-05-01";
 		
 		List<DataFinalRelatorio> cc = new ArrayList<DataFinalRelatorio>();
-		
+		List<DataInicioRelatorio> dd = new ArrayList<DataInicioRelatorio>();
+		 
+		dd = mani.procurarDataInicial("2015-05-08");
 		cc = mani.procurarDataFinal(data);
 			
 		for(DataFinalRelatorio d : mani.listFinal){
 			System.out.println(d.getDataFinal());
 			System.out.println(d.getKilowatt());
 			System.out.println(d.getValor());
+			
+			for(DataInicioRelatorio x: mani.listInicial){
+				System.out.println(x.getDataInicio()+".");
+				System.out.println(x.getKilowatt()+".");
+				System.out.println(x.getValor()+".");
+				
+				long resultado = x.getDataInicio().getTime() - d.getDataFinal().getTime();
+				 dias = resultado/86400000L;
+			}
+		}
+		System.out.println(dias);
+		System.out.println("\n--------------------------\n");
+		
+		for(DataInicioRelatorio d: mani.listInicial){
+			System.out.println(d.getDataInicio());
+			System.out.println(d.getKilowatt());
+			System.out.println(d.getValor());
 		}
 		
+		System.out.println("\n ------------------------ \n");
+		
+		mani.buscador("2015-05-01", "2015-05-05");
+		
+		System.out.println(mani);
 
 	/*	String data = "2015-05-01";
 		String dataf = "2015-05-10";
