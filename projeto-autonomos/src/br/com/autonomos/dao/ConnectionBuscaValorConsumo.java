@@ -21,7 +21,7 @@ public class ConnectionBuscaValorConsumo {
 	
 	public List<ConsumoEnergia> listValorBusca = new ArrayList<ConsumoEnergia>();
 	
-	public List<ConsumoEnergia> buscador (String dateInicio, String dateFinal) throws SQLException{
+	public List<ConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
 		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
 		String sql = BUSCA_VALORES;
 		
@@ -48,7 +48,7 @@ public class ConnectionBuscaValorConsumo {
 	
 	public List<ConsumoAgua> listConsumoAgua = new ArrayList<ConsumoAgua>();
 	
-	public List<ConsumoAgua> procurarValorConsumo (String dataInicio, String dataFinal) throws SQLException{
+	public List<ConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
 		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
 		String sql = PROCURA_CONSUMO_AGUA;
 		ConsumoAgua consumoAgua = new ConsumoAgua();
@@ -57,6 +57,8 @@ public class ConnectionBuscaValorConsumo {
 				DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 				conn = DriverManager.getConnection(url);
 				PreparedStatement stm = conn.prepareStatement(sql);
+				stm.setString(1, dataInicio);
+				stm.setString(2, dataFinal);
 				ResultSet rs = stm.executeQuery();
 				while(rs.next()){
 					consumoAgua.setLitros(rs.getDouble(1));

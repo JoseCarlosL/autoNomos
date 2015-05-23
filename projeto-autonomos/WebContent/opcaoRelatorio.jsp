@@ -32,7 +32,8 @@
 			
 			</div>
 			<div id="agua">
-				
+</form>
+<form action="relatorioAgua.jsp" method="post">			
 				<fieldset>
 					<legend>Gerar relatório de controle de água</legend>
 				<table>
@@ -40,10 +41,10 @@
 						<td>Água <input type="checkbox" name="agua" value="água" /></td>
 					</tr>
 					<tr>
-						<td>do dia <input type="date" name="data" size="44" /></td>
+						<td>do dia <input type="date" name="dataInicio" size="44" /></td>
 					</tr>
 					<tr>
-						<td>ao dia <input type="date" name="data" size="44" /></td>
+						<td>ao dia <input type="date" name="dataFinal" size="44" /></td>
 					</tr>
 					<tr>
 						<td><input id="gerarAgua" type="submit" value="Gerar" /> <input type="reset" value="Limpar" /></td>

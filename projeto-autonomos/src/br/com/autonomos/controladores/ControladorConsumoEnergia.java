@@ -24,6 +24,6 @@ public class ControladorConsumoEnergia {
 	}//getInstance
 	
 	public List<ConsumoEnergia> buscar(String dateInicio, String dateFinal) throws SQLException{
-		return energiaDAO.buscador(dateInicio, dateFinal);
+		return energiaDAO.procurarValorEnergia(dateInicio, dateFinal);
 	}
 }

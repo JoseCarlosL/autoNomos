@@ -16,6 +16,8 @@ public class ControladorConsumoAgua {
 		this.aguaDAO = new ConnectionBuscaValorConsumo();
 	}
 	
+	//------Consumo de agua----
+	
 	public static ControladorConsumoAgua getInstance(){
 		if(instace == null){
 			instace = new ControladorConsumoAgua();
@@ -24,6 +26,6 @@ public class ControladorConsumoAgua {
 	}
 	
 	public List<ConsumoAgua> procurarConsumo(String dataInicio, String dataFinal) throws SQLException{
-		return aguaDAO.procurarValorConsumo(dataInicio, dataFinal);
+		return aguaDAO.procurarValorAgua(dataInicio, dataFinal);
 	}
 }

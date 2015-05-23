@@ -1,6 +1,6 @@
+<%@page import="br.com.autonomos.dao.ConnectionBuscaValorConsumo"%>
 <%@page import="br.com.autonomos.controladores.ControladorConsumoEnergia"%>
 <%@page import="br.com.autonomos.relatorioConsumo.ConsumoEnergia"%>
-<%@page import="br.com.autonomos.dao.ConnectionBuscaValorConsumoEnergia"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -31,7 +31,6 @@
 		</tr>
 		<%
 		ConsumoEnergia valorBusca = new ConsumoEnergia();
-		ConnectionBuscaValorConsumoEnergia manipulador = new ConnectionBuscaValorConsumoEnergia();
 		ControladorConsumoEnergia controler = ControladorConsumoEnergia.getInstance();
 		List<ConsumoEnergia> energia;
 		String dataInicio = request.getParameter("dataInicio");
@@ -57,20 +56,14 @@
 		
 		%>
 		<tr class="paciente">
-			<td class="info-peso" id="peso-1"><%= dataInicio %> até <%= dataFinal %></td>
+			<td class="info-peso" id="peso-1"><%= b.getDataInicial() %> até <%= b.getDataFinal() %></td>
 			<td class="info-altura" id="altura-1"><%=b.getKilowatt()%></td>
 			<td class="info-imc" id="imc-1"><%=b.getValor()%></td>
 		</tr>
 		
 		<% 
-		} 
+		}//for
 		%>
-			
-		<tr class="paciente">
-			<td class="info-peso" id="peso-2">10/02/2015 a 10/03/2015</td>
-			<td class="info-altura" id="altura-2">80000</td>
-			<td class="info-imc" id="imc-2">978,32</td>
-		</tr>
 	</table>
 
 	<button id="calcula-imcs" class="botao ">Imprimir Relatório</button>
