@@ -3,17 +3,17 @@ package br.com.autonomos.controladores;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.autonomos.dao.ConnectionBuscaValorConsumoEnergia;
+import br.com.autonomos.dao.ConnectionBuscaValorConsumo;
 import br.com.autonomos.relatorioConsumo.ConsumoEnergia;
 
 public class ControladorConsumoEnergia {
 	
 	private static ControladorConsumoEnergia instance;
-	private ConnectionBuscaValorConsumoEnergia energiaDAO;
+	private ConnectionBuscaValorConsumo energiaDAO;
 	
 	private ControladorConsumoEnergia(){
 		super();
-		this.energiaDAO = new ConnectionBuscaValorConsumoEnergia();
+		this.energiaDAO = new ConnectionBuscaValorConsumo();
 	}//Controlador
 	
 	public static ControladorConsumoEnergia getInstance(){
