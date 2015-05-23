@@ -1,3 +1,4 @@
+<%@page import="br.com.autonomos.dao.ConnectionValidaLoginUsuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,32 +8,21 @@
 <title>Login com JSP</title>
 </head>
 <body>
-
 	<%
-		// usuario e senha corretos
-		String usuario_p = "haysa";
-		String senha_p = "haysa";
-
-		String usuario = request.getParameter("email");
+		ConnectionValidaLoginUsuario user = new ConnectionValidaLoginUsuario();
+		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
 
-		// verifica se os dados informados estão corretos
-		if ((usuario.equals(usuario_p)) && (senha.equals(senha_p))) {
-			String redirectURL = "/ClasseWeb/platClient.html";
-			response.sendRedirect(redirectURL);
+		boolean status = user.verificarUsuario(senha, email);
+
+		if (user.result == true) {
+			out.println("Entrou");
 
 		} else {
-			%>
-			<script language="JavaScript" type="text/javascript">
-				alert("lal");
-			</script>
-		
-			<%
-			String redirect = "/ClasseWeb/login.html";
-			response.sendRedirect(redirect);
-
+			out.println("Não entrou");
 		}
 	%>
+
 
 
 </body>
