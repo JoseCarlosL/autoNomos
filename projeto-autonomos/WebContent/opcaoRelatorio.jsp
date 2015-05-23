@@ -3,11 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
+		<title>Gerar Relatório</title>
+		<meta charset="UTF-8" />
+		<link href="css/opcaoRelatorio.css" type="text/css" rel="stylesheet" />
+		<script src="js/.js" type="text/javascript"></script>
+	</head>
 <body>
-<form action = "relatorio" method="post">
+<form action = "relatorioEnergia.jsp" method="post">
 			<div id="luzes">
 				<fieldset>
 					<legend>Gerar relatório de controle de luz</legend>
@@ -24,14 +26,6 @@
 					<tr>
 						<td><input id="gerarLuz" type="submit" value="Gerar"/> <input type="reset" value="Limpar" /></td>
 					</tr>
-					<% 
-					
-					String dataInicial = request.getParameter("dataInicio");
-					String dataFim = request.getParameter("dataFinal");
-					
-					response.sendRedirect("relatorioEnergia.jps"); 
-					
-					%>
 				</table>
 				
 				</fieldset>

@@ -2,18 +2,18 @@ package br.com.autonomos.relatorioConsumo;
 
 import java.sql.Date;
 
-public class ValoresDeBusca {
+public class ConsumoEnergia {
 	
 	private Date dataInicial;
 	private Date dataFinal;
 	private double kilowatt;
 	private double valor;
 	
-	public ValoresDeBusca() {
+	public ConsumoEnergia() {
 
 	}
 	
-	public ValoresDeBusca(Date dataInicio, Date dataFim, double kw, double valor){
+	public ConsumoEnergia(Date dataInicio, Date dataFim, double kw, double valor){
 		this.dataInicial = dataInicio;
 		this.dataFinal = dataFim;
 		this.kilowatt = kw;

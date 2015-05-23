@@ -1,10 +1,10 @@
-<%@page import="br.com.autonomos.relatorioConsumo.ValoresDeBusca"%>
-<%@page import="relatorioDeConsumo.DataInicioRelatorio"%>
-<%@page import="br.com.autonomos.controlador.ManipuladorBD"%>
+<%@page import="br.com.autonomos.controladores.ControladorConsumoEnergia"%>
+<%@page import="br.com.autonomos.relatorioConsumo.ConsumoEnergia"%>
+<%@page import="br.com.autonomos.dao.ConnectionBuscaValorConsumoEnergia"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="relatorioDeConsumo.DataFinalRelatorio"%>
 <%@page import="java.util.List"%>
-<%@page import="br.com.autonomos.controlador.ManipuladorBD"%>
+<%@page import="java.sql.Date" %>>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,12 +12,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Relatório de consumo de energia</title>
-<link rel="stylesheet" type="text/css" href="css/resetRelatorio.css">
+<link rel="stylesheet" t'ype="text/css" href="css/resetRelatorio.css">
 <link rel="stylesheet" type="text/css" href="css/tabelaRelatorio.css">
 </head>
 <body>
 	<header>
-	<form action="relatorio" method="post">
 		<div class="container">
 			<h1>autoNomos - ecoHome</h1>
 		</div>
@@ -31,27 +30,36 @@
 			<th>Valor em R$</th>
 		</tr>
 		<%
-		ManipuladorBD manipulador = new ManipuladorBD();
-		ValoresDeBusca valorBusca = new ValoresDeBusca();
-		
-		String dataInicio = "2015-05-01"; 
-		String dataFinal = "2015-05-10";
+		ConsumoEnergia valorBusca = new ConsumoEnergia();
+		ConnectionBuscaValorConsumoEnergia manipulador = new ConnectionBuscaValorConsumoEnergia();
+		ControladorConsumoEnergia controler = ControladorConsumoEnergia.getInstance();
+		List<ConsumoEnergia> energia;
+		String dataInicio = request.getParameter("dataInicio");
+		String dataFinal = request.getParameter("dataFinal");
 		%>
 		<%
-			//finalDate = manipulador.procurarDataFinal("2015-05-01");
-			//inicialDate = manipulador.procurarDataInicial("2015-05-10");
 			
+			energia = controler.buscar(dataInicio, dataFinal);
 			
-			manipulador.buscador(dataInicio, dataFinal);
+			/*SimpleDateFormat formate =  new SimpleDateFormat("dd-MM-yyyy");
+			Date dataInic = new Date(formate.parse(dataInicio).getTime());
 			
-			for(ValoresDeBusca f: manipulador.listValorBusca){
+			String dataFormatada = "dd-MM-yyyy";
+			SimpleDateFormat formato = new SimpleDateFormat(dataFormatada);
+			String dataIf = formate.format(dataInic);
+			* TENHO QUE CONCERTAR ESSA PARTE PARA O FORMATO DA DATA */
 			
+			for(ConsumoEnergia b: energia){
+				
+			/*
+			* 
+			*/
 		
 		%>
 		<tr class="paciente">
-			<td class="info-peso" id="peso-1"><%= dataInicio %><p> até </p><%= dataFinal %></td>
-			<td class="info-altura" id="altura-1"><%=f.getKilowatt()%></td>
-			<td class="info-imc" id="imc-1"><%=f.getValor()%></td>
+			<td class="info-peso" id="peso-1"><%= dataInicio %> até <%= dataFinal %></td>
+			<td class="info-altura" id="altura-1"><%=b.getKilowatt()%></td>
+			<td class="info-imc" id="imc-1"><%=b.getValor()%></td>
 		</tr>
 		
 		<% 
@@ -68,6 +76,5 @@
 	<button id="calcula-imcs" class="botao ">Imprimir Relatório</button>
 
 	</section>
-	</form>
 </body>
 </html>
