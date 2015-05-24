@@ -16,7 +16,8 @@
 		boolean status = user.verificarUsuario(senha, email);
 
 		if (user.result == true) {
-			out.println("Entrou");
+			String url = "http://localhost:8080/ClasseWeb/platClient.html";
+			response.sendRedirect(url);
 
 		} else {
 			out.println("Não entrou");

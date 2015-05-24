@@ -7,6 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+
+<script src="js.call-backs.js"></script>
+
 </head>
 <body>
 
@@ -17,12 +20,20 @@
 		String data_f = request.getParameter("data");
 		String duvida_f = request.getParameter("duvida");
 
-		out.println("Dúvida enviada!");
+		//out.println("Dúvida enviada!");
 
 		ConnectionFomularioContato form = new ConnectionFomularioContato();
 		form.coneccaoBDMysqlFormContato(nome_f, email_f, telefone_f,
 				data_f, duvida_f);
+
+		String url = "http://localhost:8080/ClasseWeb/contato.html";
+		response.sendRedirect(url);
 	%>
+
+
+
+
+
 
 </body>
 </html>

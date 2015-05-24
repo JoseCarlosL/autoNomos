@@ -43,25 +43,26 @@
 		<header class="major">
 			<h2>Gostou dos nossos serviços? Quer marcar uma visita com o
 				nosso consultor?</h2>
-			<h1>Essa é uma área reservada para você tirar dúvidas e
-				marcar uma visita com os nossos consultores. Por favor, nos escreva.</h1>
+			<h1>Essa é uma área reservada para você tirar dúvidas e marcar
+				uma visita com os nossos consultores. Por favor, nos escreva.</h1>
 		</header>
 	</section>
 
 	<!-- Formulário Contato -->
 	<section>
-		<form id="form_contato" name="contato" action="contatoJSP.jsp" method="post" >
+		<form id="form_contato" name="contato" action="contatoJSP.jsp"
+			method="post">
 			<div id="formLogin">
 				<div align="center">
 					<tr>
 						<td><h4>Nome:</h4> <input type="text" name="nome"
-							placeholder="Seu nome aqui"  maxlength="50" size="44" /></td>
+							placeholder="Seu nome aqui" maxlength="50" size="44" /></td>
 					</tr>
 					<br>
 
 					<tr>
 						<td><h4>E-mail:</h4> <input type="text" name="email"
-							placeholder="Seu e-mail aqui"  size="44" /></td>
+							placeholder="Seu e-mail aqui" size="44" /></td>
 					</tr>
 					<br>
 
@@ -81,12 +82,12 @@
 					<tr>
 						<td><h4>Descreva sua dúvida:</h4> <textarea
 								placeholder="Escreva sua duvida aqui" name="duvida" rows="8"
-								cols="40"  ></textarea></td>
+								cols="40"></textarea></td>
 					</tr>
 					<br> <br>
 
-					<ul class="actions">
-						<li><input type="submit" value="ENVIAR" /></li>
+					<ul>
+						<li><input type="submit" onclick="msgConfirma();" value="ENVIAR" /></li>
 					</ul>
 					</tr>
 
