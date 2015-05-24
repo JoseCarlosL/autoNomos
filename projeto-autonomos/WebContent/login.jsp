@@ -1,3 +1,5 @@
+<%@page import="br.com.autonomos.modelo.Usuario"%>
+<%@page import="java.util.List"%>
 <%@page import="br.com.autonomos.dao.ConnectionValidaLoginUsuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -10,17 +12,20 @@
 <body>
 	<%
 		ConnectionValidaLoginUsuario user = new ConnectionValidaLoginUsuario();
+		List<Usuario> usuario;
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
+		usuario = user.verificarUsuario(senha, email);
 
-		boolean status = user.verificarUsuario(senha, email);
+		for (Usuario u : usuario) {
+			if (u.getEmail().equals(email) && u.getSenha().equals(senha)) {
+				String url = "http://localhost:8080/ClasseWeb/platClient.html";
+				response.sendRedirect(url);
+			} else {
 
-		if (user.result == true) {
-			String url = "http://localhost:8080/ClasseWeb/platClient.html";
-			response.sendRedirect(url);
-
-		} else {
-			out.println("Não entrou");
+				String url = "http://localhost:8080/ClasseWeb/login.html";
+				response.sendRedirect(url);
+			}
 		}
 	%>
 

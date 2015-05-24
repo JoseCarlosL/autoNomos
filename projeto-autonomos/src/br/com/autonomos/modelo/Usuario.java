@@ -11,20 +11,24 @@ public class Usuario extends Pessoa {
 		this.senha = senha;
 
 	}
+	
+	public Usuario() {
+		
+	}
 
-	private String getSenha() {
+	public String getSenha() {
 		return senha;
 	}
 
-	protected void setSenha(String senha) {
+	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
-	protected String getEmail(){
+	public String getEmail(){
 		return email;
 	}
 	
-	private void setEmail(){
+	public void setEmail(String email){
 		this.email = email;
 	}
 	
@@ -34,6 +38,11 @@ public class Usuario extends Pessoa {
 		}else{
 			return false;
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return email + " , " + senha;
 	}
 
 }
