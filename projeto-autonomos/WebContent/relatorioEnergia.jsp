@@ -56,7 +56,7 @@
 		
 		%>
 		<tr class="paciente">
-			<td class="info-peso" id="peso-1"><%= b.getDataInicial() %> até <%= b.getDataFinal() %></td>
+			<td class="info-peso" id="peso-1"><%= dataInicio %> até <%= dataFinal %></td>
 			<td class="info-altura" id="altura-1"><%=b.getKilowatt()%></td>
 			<td class="info-imc" id="imc-1"><%=b.getValor()%></td>
 		</tr>
