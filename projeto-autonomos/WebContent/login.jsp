@@ -23,8 +23,8 @@
 				response.sendRedirect(url);
 			} else {
 
-				String url = "http://localhost:8080/ClasseWeb/login.html";
-				response.sendRedirect(url);
+				/* String url = "http://localhost:8080/ClasseWeb/login.html";
+				response.sendRedirect(url); */
 			}
 		}
 	%>
