@@ -9,29 +9,36 @@
 
 <body>
 	<form name="relatarErro" method="post" action="relatarErro.jsp">
-		<table align="center">
-			<span id="check">
-				<tr>
-					<td align="left">Selecione o tipo de erro:</br> 
-					<input type="checkbox" value="iluminacao" /> Controle de Iluminação </br> 
-					<input type="checkbox" value="agua" /> Consumo de água </br> 
-					<input type="checkbox" value="relatorio" /> Relatório  </br> 
-					<input type="checkbox" value="outros" /> Outros
-					</td> </br> </br>
-				</tr>
-			</span>
-			<tr>
-				<td align="left">Descreva o que aconteceu: </br> <textarea
-						placeholder="Digite aqui o que aconteceu" cols="30" rows="8"></textarea>
-				</td>
-			</tr>
 
-			<tr>
-				<td align="left"><input type="button" value="Enviar" /></td>
-				<td align="right"> <input  type="button" value="cancelar" onclick="location.href"= http://localhost:8080/ClasseWeb/platClient.html> </td>
+		<p align="">Indique abaixo o erro encontrado:</p>
+		<tr>
+			<select align="center" name="erro">
+				<option value="nao-selecionado" select>.: Selecione uma
+					opçao :.</option>
+				<option value="iluminacao">Controle de Iluminação</option>
+				<option value="agua">Consumo de água</option>
+				<option value="relatorio">Relatórios</option>
+				<option value="outros">Outros</option>
+			</select>
+			<br>
 
-			</tr>
-		</table>
+		</tr>
+
+		<tr>
+			<td align="center">Descreva o que aconteceu: </br> <textarea
+					name="descricao" placeholder="Digite aqui o que aconteceu" cols="30"
+					rows="8"></textarea> <br>
+			</td>
+		</tr>
+
+		<tr>
+			<td align="center"><input type="submit" value="Enviar" /></td>
+			<td align="left"><input type="reset" value="Cancelar"
+				onclick="document.location.href= '<%= http://localhost:8080/ClasseWeb/platClient.html %>'" /></td>
+
+
+		</tr>
+
 	</form>
 </body>
 </html>
