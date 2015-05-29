@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.autonomos.dao.ConnectionBuscaValorConsumo;
-import br.com.autonomos.relatorioConsumo.ConsumoEnergia;
+import br.com.autonomos.modelo.ConsumoEnergia;
 
 public class ControladorConsumoEnergia {
 	

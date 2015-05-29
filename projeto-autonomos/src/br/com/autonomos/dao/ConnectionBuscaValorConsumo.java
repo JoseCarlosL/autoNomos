@@ -11,8 +11,8 @@ import java.sql.Date;
 
 import com.mysql.fabric.xmlrpc.base.Array;
 
-import br.com.autonomos.relatorioConsumo.ConsumoAgua;
-import br.com.autonomos.relatorioConsumo.ConsumoEnergia;
+import br.com.autonomos.modelo.ConsumoAgua;
+import br.com.autonomos.modelo.ConsumoEnergia;
 
 public class ConnectionBuscaValorConsumo {
 
@@ -22,7 +22,11 @@ public class ConnectionBuscaValorConsumo {
 	public List<ConsumoEnergia> listValorBusca = new ArrayList<ConsumoEnergia>();
 	
 	public List<ConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
+<<<<<<< HEAD
 		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
+=======
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
+>>>>>>> ea939758280a384d1ca07dc2f7c3e7d564f88ef6
 		String sql = BUSCA_VALORES;
 		
 		ConsumoEnergia valorBusca = new ConsumoEnergia();
@@ -49,7 +53,11 @@ public class ConnectionBuscaValorConsumo {
 	public List<ConsumoAgua> listConsumoAgua = new ArrayList<ConsumoAgua>();
 	
 	public List<ConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
+<<<<<<< HEAD
 		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
+=======
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
+>>>>>>> ea939758280a384d1ca07dc2f7c3e7d564f88ef6
 		String sql = PROCURA_CONSUMO_AGUA;
 		ConsumoAgua consumoAgua = new ConsumoAgua();
 		Connection conn = null;

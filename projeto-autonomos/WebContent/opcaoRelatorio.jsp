@@ -14,9 +14,7 @@
 				<fieldset>
 					<legend>Gerar relatório de controle de luz</legend>
 				<table>
-					<tr>
-						<td>Luz <input type="checkbox" name="luz" value="luz" /></td>
-					</tr>
+					
 					<tr>
 						<td>do dia <input type="date" name="dataInicio" size="44" /></td>
 					</tr>
@@ -37,9 +35,7 @@
 				<fieldset>
 					<legend>Gerar relatório de controle de água</legend>
 				<table>
-					<tr>
-						<td>Água <input type="checkbox" name="agua" value="água" /></td>
-					</tr>
+					
 					<tr>
 						<td>do dia <input type="date" name="dataInicio" size="44" /></td>
 					</tr>

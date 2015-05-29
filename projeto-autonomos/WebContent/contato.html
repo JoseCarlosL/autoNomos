@@ -12,12 +12,14 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/skel.blz.js"></script>
 <script src="js/init.js"></script>
-<script src="js.call-backs.js"></script>
+<script src="js/call-backs.js"></script>
+
 <noscript>
 	<link rel="stylesheet" href="css/skel.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/style-xlarge.css" />
 </noscript>
+
 </head>
 <body id="top">
 
@@ -50,43 +52,48 @@
 
 	<!-- Formulário Contato -->
 	<section>
-		<form id="form_contato" name="contato" action="contatoJSP.jsp" method="post">
+		<form id="form_contato" name="contato" action="contatoJSP.jsp"
+			method="post">
 			<div id="formLogin">
 				<div align="center">
 					<tr>
-						<td><h4>Nome:</h4> <input type="text" name="nome"
-							placeholder="Seu nome aqui" maxlength="50" size="44" /></td>
+						<td><h4>Nome:</h4> <input type="text" name="nome" id="nome"
+							placeholder="Seu nome aqui" maxlength="50" size="44"
+							required="required" /></td>
 					</tr>
 					<br>
 
 					<tr>
-						<td><h4>E-mail:</h4> <input type="text" name="email"
-							placeholder="Seu e-mail aqui" size="44" /></td>
+						<td><h4>E-mail:</h4> <input type="email" name="email"
+							id="email" placeholder="Seu e-mail aqui" size="44"
+							required="required" /></td>
 					</tr>
 					<br>
 
 					<tr>
 						<td><h4>Telefone para contato:</h4> <input type="text"
-							name="telefone" placeholder="Seu telefone aqui" size="44" /></td>
+							name="telefone" id="telefone" placeholder="Seu telefone aqui"
+							size="44" required="required" /></td>
 					</tr>
 					<br>
 
 					<tr>
 						<td><h4>Selecione a data para visita:</h4> <input type="date"
-							name="data" size="44" /></td>
+							name="data" id="data" size="44" required="required" /></td>
 					</tr>
 					<br> <br>
 
 
 					<tr>
 						<td><h4>Descreva sua dúvida:</h4> <textarea
-								placeholder="Escreva sua duvida aqui" name="duvida" rows="8"
-								cols="40"></textarea></td>
+								placeholder="Escreva sua duvida aqui" name="duvida" id="duvida"
+								rows="8" cols="40" required="required"></textarea></td>
 					</tr>
 					<br> <br>
 
 					<ul>
-						<li><input type="submit" onclick="msgConfirma();" value="ENVIAR" /></li>
+						<li><input type="submit" onclick="validarCampos()"
+							value="ENVIAR" /></li>
 					</ul>
 					</tr>
 

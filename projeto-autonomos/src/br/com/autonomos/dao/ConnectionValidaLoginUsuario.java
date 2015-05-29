@@ -20,7 +20,7 @@ public class ConnectionValidaLoginUsuario {
 	
 	public List<Usuario> verificarUsuario(String email, String senha) throws SQLException{
 		String sql = "select email, senha from usuarios where email = (?) and senha = (?)";
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
 		Usuario user = new Usuario();
 		Connection conn = null;
 			try{

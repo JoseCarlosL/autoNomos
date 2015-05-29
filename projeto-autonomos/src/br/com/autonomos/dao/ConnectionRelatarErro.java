@@ -18,7 +18,7 @@ public class ConnectionRelatarErro {
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			con = DriverManager
-					.getConnection("jdbc:mysql://localhost/autonomos?user=root&password=carlos");
+					.getConnection("jdbc:mysql://localhost/autonomos?user=root&password=root");
 			String sql = "INSERT INTO relato_erro (categoria, descricao) values (?, ?)";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, categoria);
