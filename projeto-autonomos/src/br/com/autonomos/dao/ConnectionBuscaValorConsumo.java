@@ -22,7 +22,7 @@ public class ConnectionBuscaValorConsumo {
 	public List<ConsumoEnergia> listValorBusca = new ArrayList<ConsumoEnergia>();
 	
 	public List<ConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
-		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
 		String sql = BUSCA_VALORES;
 		
 		ConsumoEnergia valorBusca = new ConsumoEnergia();
@@ -49,7 +49,7 @@ public class ConnectionBuscaValorConsumo {
 	public List<ConsumoAgua> listConsumoAgua = new ArrayList<ConsumoAgua>();
 	
 	public List<ConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
-		String url = "jdbc:mysql://localhost/testhome?user=root&password=carlos";
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
 		String sql = PROCURA_CONSUMO_AGUA;
 		ConsumoAgua consumoAgua = new ConsumoAgua();
 		Connection conn = null;
