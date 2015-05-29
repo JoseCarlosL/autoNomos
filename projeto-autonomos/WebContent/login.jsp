@@ -12,21 +12,22 @@
 <body>
 	<%
 		ConnectionValidaLoginUsuario user = new ConnectionValidaLoginUsuario();
-		List<Usuario> usuario;
-		String email = request.getParameter("email");
-		String senha = request.getParameter("senha");
-		usuario = user.verificarUsuario(senha, email);
+			List<Usuario> usuario;
+			String email = request.getParameter("email");
+			String senha = request.getParameter("senha");
+			usuario = user.verificarUsuario(senha, email);
 
-		for (Usuario u : usuario) {
-			if (u.getEmail().equals(email) && u.getSenha().equals(senha)) {
-				String url = "http://localhost:8080/ClasseWeb/platClient.html";
-				response.sendRedirect(url);
-			} else {
+			for (Usuario u : usuario) {
+		if (u.getEmail().equals(email) && u.getSenha().equals(senha)) {
+			String url = "http://localhost:8080/ClasseWeb/platClient.html";
+			response.sendRedirect(url);
+		} else {
 
-				/* String url = "http://localhost:8080/ClasseWeb/login.html";
-				response.sendRedirect(url); */
-			}
+			
+			/* String url = "http://localhost:8080/ClasseWeb/login.html";
+			response.sendRedirect(url); */
 		}
+			}
 	%>
 
 

@@ -1,6 +1,6 @@
 <%@page import="br.com.autonomos.dao.ConnectionBuscaValorConsumo"%>
 <%@page import="br.com.autonomos.controladores.ControladorConsumoEnergia"%>
-<%@page import="br.com.autonomos.relatorioConsumo.ConsumoEnergia"%>
+<%@page import="br.com.autonomos.modelo.ConsumoEnergia"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>

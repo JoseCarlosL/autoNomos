@@ -1,4 +1,4 @@
-package br.com.autonomos.relatorioConsumo;
+package br.com.autonomos.modelo;
 
 import java.sql.Date;
 

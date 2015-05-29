@@ -1,7 +1,7 @@
 <%@page import="br.com.autonomos.controladores.ControladorConsumoAgua"%>
 <%@page import="java.util.List"%>
 <%@page import="br.com.autonomos.dao.ConnectionBuscaValorConsumo"%>
-<%@page import="br.com.autonomos.relatorioConsumo.ConsumoAgua"%>
+<%@page import="br.com.autonomos.modelo.ConsumoAgua"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
