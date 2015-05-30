@@ -24,7 +24,7 @@ public class ConnectionFomularioContato {
 
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			con = DriverManager
-					.getConnection("jdbc:mysql://localhost/autonomos?user=root&password=root");
+					.getConnection("jdbc:mysql://localhost/autonomos?user=root&password=carlos");
 			String sql = "INSERT INTO form_contato (nome, email, telefone, data, descricao_duvida) values (?, ?, ?, ?, ?)";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, nome);
