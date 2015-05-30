@@ -1,6 +1,6 @@
 <%@page import="br.com.autonomos.dao.ConnectionBuscaValorConsumo"%>
 <%@page import="br.com.autonomos.controladores.ControladorConsumoEnergia"%>
-<%@page import="br.com.autonomos.modelo.ConsumoEnergia"%>
+<%@page import="br.com.autonomos.modelo.RelatorioConsumoEnergia"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -30,9 +30,9 @@
 			<th>Valor em R$</th>
 		</tr>
 		<%
-		ConsumoEnergia valorBusca = new ConsumoEnergia();
+		RelatorioConsumoEnergia valorBusca = new RelatorioConsumoEnergia();
 		ControladorConsumoEnergia controler = ControladorConsumoEnergia.getInstance();
-		List<ConsumoEnergia> energia;
+		List<RelatorioConsumoEnergia> energia;
 		String dataInicio = request.getParameter("dataInicio");
 		String dataFinal = request.getParameter("dataFinal");
 		%>
@@ -40,15 +40,14 @@
 			
 			energia = controler.buscar(dataInicio, dataFinal);
 			
-			/*SimpleDateFormat formate =  new SimpleDateFormat("dd-MM-yyyy");
+			SimpleDateFormat formate =  new SimpleDateFormat("dd-MM-yyyy");
 			Date dataInic = new Date(formate.parse(dataInicio).getTime());
 			
 			String dataFormatada = "dd-MM-yyyy";
 			SimpleDateFormat formato = new SimpleDateFormat(dataFormatada);
 			String dataIf = formate.format(dataInic);
-			* TENHO QUE CONCERTAR ESSA PARTE PARA O FORMATO DA DATA */
 			
-			for(ConsumoEnergia b: energia){
+			for(RelatorioConsumoEnergia b: energia){
 				
 			/*
 			* 

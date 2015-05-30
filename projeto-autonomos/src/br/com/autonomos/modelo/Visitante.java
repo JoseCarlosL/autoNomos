@@ -10,6 +10,7 @@ public class Visitante extends Pessoa {
 	public Visitante(int id, String nome, String email, String telefone,
 			String cpf, Endereco endereco) {
 		super(id, nome, email, telefone, endereco);
+		super.setTipoPessoa("visitante");
 
 	}
 

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.autonomos.dao.ConnectionBuscaValorConsumo;
-import br.com.autonomos.modelo.ConsumoEnergia;
+import br.com.autonomos.modelo.RelatorioConsumoEnergia;
 
 public class ControladorConsumoEnergia {
 	
@@ -23,7 +23,7 @@ public class ControladorConsumoEnergia {
 		return instance;
 	}//getInstance
 	
-	public List<ConsumoEnergia> buscar(String dateInicio, String dateFinal) throws SQLException{
+	public List<RelatorioConsumoEnergia> buscar(String dateInicio, String dateFinal) throws SQLException{
 		return energiaDAO.procurarValorEnergia(dateInicio, dateFinal);
 	}
 }

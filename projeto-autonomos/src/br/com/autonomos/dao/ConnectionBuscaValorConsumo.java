@@ -11,27 +11,24 @@ import java.sql.Date;
 
 import com.mysql.fabric.xmlrpc.base.Array;
 
-import br.com.autonomos.modelo.ConsumoAgua;
-import br.com.autonomos.modelo.ConsumoEnergia;
+import br.com.autonomos.modelo.RelatorioConsumoAgua;
+import br.com.autonomos.modelo.RelatorioConsumoEnergia;
 
 public class ConnectionBuscaValorConsumo {
 
 	private final String BUSCA_VALORES = "select sum(kilowatt), sum(valor) from consumo where data between (?) and (?)";
 	private final String PROCURA_CONSUMO_AGUA = "select sum(litros), sum(valor) from consumoAgua where data between (?) and (?)";
 	
-	public List<ConsumoEnergia> listValorBusca = new ArrayList<ConsumoEnergia>();
+	public List<RelatorioConsumoEnergia> listValorBusca = new ArrayList<RelatorioConsumoEnergia>();
 	
-	public List<ConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
-<<<<<<< HEAD
+	public List<RelatorioConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
 		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
-=======
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
->>>>>>> ea939758280a384d1ca07dc2f7c3e7d564f88ef6
 		String sql = BUSCA_VALORES;
 		
-		ConsumoEnergia valorBusca = new ConsumoEnergia();
+		RelatorioConsumoEnergia valorBusca = new RelatorioConsumoEnergia();
 		Connection conn = null;
 		try {
+			listValorBusca.clear();
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			conn = DriverManager.getConnection(url);
 			PreparedStatement stm = conn.prepareStatement(sql);
@@ -50,16 +47,12 @@ public class ConnectionBuscaValorConsumo {
 		return listValorBusca;
 	}
 	
-	public List<ConsumoAgua> listConsumoAgua = new ArrayList<ConsumoAgua>();
+	public List<RelatorioConsumoAgua> listConsumoAgua = new ArrayList<RelatorioConsumoAgua>();
 	
-	public List<ConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
-<<<<<<< HEAD
+	public List<RelatorioConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
 		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
-=======
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
->>>>>>> ea939758280a384d1ca07dc2f7c3e7d564f88ef6
 		String sql = PROCURA_CONSUMO_AGUA;
-		ConsumoAgua consumoAgua = new ConsumoAgua();
+		RelatorioConsumoAgua consumoAgua = new RelatorioConsumoAgua();
 		Connection conn = null;
 			try{
 				DriverManager.registerDriver(new com.mysql.jdbc.Driver());

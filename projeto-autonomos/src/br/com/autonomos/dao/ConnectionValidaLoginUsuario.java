@@ -19,8 +19,9 @@ public class ConnectionValidaLoginUsuario {
 	public boolean status = false;
 	
 	public List<Usuario> verificarUsuario(String email, String senha) throws SQLException{
+		System.out.println(email);
 		String sql = "select email, senha from usuarios where email = (?) and senha = (?)";
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
 		Usuario user = new Usuario();
 		Connection conn = null;
 			try{
