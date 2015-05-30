@@ -1,4 +1,4 @@
-package servlets;
+package br.com.autonomos.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;

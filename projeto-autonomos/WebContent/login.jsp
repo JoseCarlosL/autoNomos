@@ -10,7 +10,7 @@
 <title>Login com JSP</title>
 </head>
 <body>
-	<%
+	<%-- <%
 		ConnectionValidaLoginUsuario user = new ConnectionValidaLoginUsuario();
 			List<Usuario> usuario;
 			String email = request.getParameter("email");
@@ -28,7 +28,7 @@
 			response.sendRedirect(url); */
 		}
 			}
-	%>
+	%> --%>
 
 
 
