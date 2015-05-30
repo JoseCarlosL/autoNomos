@@ -10,8 +10,12 @@
 <title>Login com JSP</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<input type="text" value="<%=request.getParameter("email")%>">
 	<%
+=======
+	<%-- <%
+>>>>>>> 02b467c9824b53d4eb3668c17a21d1ae652c6c41
 		ConnectionValidaLoginUsuario user = new ConnectionValidaLoginUsuario();
 			List<Usuario> usuario;
 			String email = request.getParameter("email");
@@ -27,7 +31,7 @@
 			
 	
 			}
-	%>
+	%> --%>
 
 
 
