@@ -19,9 +19,8 @@ public class ConnectionValidaLoginUsuario {
 	public boolean status = false;
 	
 	public List<Usuario> verificarUsuario(String email, String senha) throws SQLException{
-		System.out.println(email);
-		String sql = "select email, senha from usuarios where email = (?) and senha = (?)";
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
+		String sql = "select email, senha, tipo from usuario_visitante where email = (?) and senha = (?)";
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
 		Usuario user = new Usuario();
 		Connection conn = null;
 			try{
@@ -34,7 +33,11 @@ public class ConnectionValidaLoginUsuario {
 				while(rs.next()){
 					user.setEmail(rs.getString(1));
 					user.setSenha(rs.getString(2));
+					user.setTipoPessoa(rs.getString(3));
+					System.out.println(rs.getString(3));
 					listUser.add(user);
+					System.out.println(listUser.toString());
+					System.out.println(user.toString());
 				}
 			}finally{
 				conn.close();

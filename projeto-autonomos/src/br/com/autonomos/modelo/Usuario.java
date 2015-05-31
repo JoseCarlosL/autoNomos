@@ -43,7 +43,7 @@ public class Usuario extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return email + " , " + senha;
+		return email + " , " + senha + " , " + super.getTipoPessoa();
 	}
 
 }
