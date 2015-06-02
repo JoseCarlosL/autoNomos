@@ -22,7 +22,7 @@ public class ConnectionBuscaValorConsumo {
 	public List<RelatorioConsumoEnergia> listValorBusca = new ArrayList<RelatorioConsumoEnergia>();
 	
 	public List<RelatorioConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
 		String sql = BUSCA_VALORES;
 		
 		RelatorioConsumoEnergia valorBusca = new RelatorioConsumoEnergia();
@@ -50,11 +50,12 @@ public class ConnectionBuscaValorConsumo {
 	public List<RelatorioConsumoAgua> listConsumoAgua = new ArrayList<RelatorioConsumoAgua>();
 	
 	public List<RelatorioConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
 		String sql = PROCURA_CONSUMO_AGUA;
 		RelatorioConsumoAgua consumoAgua = new RelatorioConsumoAgua();
 		Connection conn = null;
 			try{
+				listConsumoAgua.clear();
 				DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 				conn = DriverManager.getConnection(url);
 				PreparedStatement stm = conn.prepareStatement(sql);

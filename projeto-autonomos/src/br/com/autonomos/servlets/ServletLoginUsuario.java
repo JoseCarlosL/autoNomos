@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import br.com.autonomos.dao.ConnectionValidaLoginUsuario;
 import br.com.autonomos.modelo.Pessoa;
 import br.com.autonomos.modelo.Usuario;
+import br.com.autonomos.modelo.Visitante;
 
 @WebServlet("/ServletLoginUsuario")
 public class ServletLoginUsuario extends HttpServlet {
@@ -34,28 +35,47 @@ public class ServletLoginUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		ConnectionValidaLoginUsuario user = new ConnectionValidaLoginUsuario();
+		ConnectionValidaLoginUsuario valida = new ConnectionValidaLoginUsuario();
 		
 		List<Usuario> usuario = null;
-		
+		List<Visitante> visitante = null;
 	
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
-
-		try {
-			usuario = user.verificarUsuario(email, senha);
-			System.out.println(usuario.toString());
-		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, e.getMessage());
-		}
-
-		for (Usuario u : usuario) {
-			if (u.getEmail().equals(email) && u.getSenha().equals(senha) && u.getTipoPessoa().equals("usuario")) {
-				String url = "http://localhost:8080/ClasseWeb/plataformaUsuario.jsp";
-				response.sendRedirect(url);
-			} else {
-				String ur = "http://localhost:8080/ClasseWeb/plataformaVisitante.jsp";
-				response.sendRedirect(ur);
+				
+		if(email.equals("carlos@carlos")){
+			
+			try {
+				usuario = valida.verificarUsuario(email, senha);
+				System.out.println(usuario.toString());
+			} catch (SQLException e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
+			
+			for (Usuario u : usuario) {
+				if (u.getEmail().equals(email) && u.getSenha().equals(senha) && u.getTipoPessoa().equals("usuario")) {
+					String url = "http://localhost:8080/ClasseWeb/plataformaUsuario.jsp";
+					response.sendRedirect(url);
+				} else {
+					System.out.println("nao foi");
+				}
+			}
+			
+			
+		} else {
+			try {
+				visitante = valida.verificarVisitante(email, senha);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			for (Visitante v : visitante) {
+				if (v.getEmail().equals(email) && v.getSenha().equals(senha) && v.getTipoPessoa().equals("visitante")) {
+					String url = "http://localhost:8080/ClasseWeb/plataformaVisitante.jsp";
+					response.sendRedirect(url);
+				} else {
+					System.out.println("nao foi");
+				}
 			}
 		}
 	}

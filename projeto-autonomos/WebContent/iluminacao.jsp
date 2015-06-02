@@ -14,7 +14,7 @@
 				<legend>SALA</legend>
 				<ul>
 					<div id="sala">
-					<li>Luz alta <br><input class="button" type="button" value="Ligar" name="ligarLuzAlta" onclick="ligarSala1();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala1();"/>   <img id="status1" src="img/erro.png" /></li>
+					<li>Luz alta <br><input class="button" type="button" value="Ligar" name="ligarLuzAlta" onmouseover="String luz;" onclick="ligarSala1();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala1();"/>   <img id="status1" src="img/erro.png" /></li>
 					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligarSala2();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala2();"/>  <img id="status2" src="img/erro.png" /></li>
 					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligarSala3();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala3();"/>  <img id="status3" src="img/erro.png" /></li>
 					</div>

@@ -55,10 +55,6 @@
 					target="mainframe"><span>Relatório</span></a></li>
 			</ul>
 		</div>
-		<li><a href='iluminacao.html' target="mainframe"><span>Controle
-					de iluminação</span></a></li>
-		</ul>
-	</div>
 
 	<div id="content">
 		<iframe id="mainframe" name="mainframe" src="iluminacao.html"
