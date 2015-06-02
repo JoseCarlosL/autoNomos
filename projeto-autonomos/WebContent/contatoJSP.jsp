@@ -22,8 +22,7 @@
 		//out.println("Dúvida enviada!");
 
 		ConnectionFomularioContato form = new ConnectionFomularioContato();
-		form.coneccaoBDMysqlFormContato(nome_f, email_f, telefone_f,
-				data_f, duvida_f);
+		form.coneccaoBDMysqlFormContato(nome_f, email_f, telefone_f, data_f, duvida_f);
 
 		String url = "http://localhost:8080/ClasseWeb/home.html";
 		response.sendRedirect(url);

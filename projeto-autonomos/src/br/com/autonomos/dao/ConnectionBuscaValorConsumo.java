@@ -21,21 +21,11 @@ public class ConnectionBuscaValorConsumo {
 	
 	public List<RelatorioConsumoEnergia> listValorBusca = new ArrayList<RelatorioConsumoEnergia>();
 	
-<<<<<<< HEAD
-	public List<ConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
-
 		//String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
 
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
 
-=======
 	public List<RelatorioConsumoEnergia> procurarValorEnergia (String dateInicio, String dateFinal) throws SQLException{
-<<<<<<< HEAD
 		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
-=======
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
->>>>>>> 3941449d80cd74911ab23303c35af09c77da527d
->>>>>>> c5c77935c5ce69114904fae60f7111f6823640ad
 		String sql = BUSCA_VALORES;
 		
 		RelatorioConsumoEnergia valorBusca = new RelatorioConsumoEnergia();
@@ -61,22 +51,9 @@ public class ConnectionBuscaValorConsumo {
 	}
 	
 	public List<RelatorioConsumoAgua> listConsumoAgua = new ArrayList<RelatorioConsumoAgua>();
-	
-<<<<<<< HEAD
-	public List<ConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
 
-		//String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
-
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
-
-=======
 	public List<RelatorioConsumoAgua> procurarValorAgua (String dataInicio, String dataFinal) throws SQLException{
-<<<<<<< HEAD
 		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
-=======
-		String url = "jdbc:mysql://localhost/autonomos?user=root&password=carlos";
->>>>>>> 3941449d80cd74911ab23303c35af09c77da527d
->>>>>>> c5c77935c5ce69114904fae60f7111f6823640ad
 		String sql = PROCURA_CONSUMO_AGUA;
 		RelatorioConsumoAgua consumoAgua = new RelatorioConsumoAgua();
 		Connection conn = null;

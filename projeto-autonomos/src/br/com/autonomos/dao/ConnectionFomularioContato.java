@@ -17,16 +17,15 @@ public class ConnectionFomularioContato {
 			String telefone, String data, String duvida) throws SQLException {
 
 		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-
+		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
+		String sql = "INSERT INTO form_contato values (?, ?, ?, ?, ?)";
+		
 		try {
 
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-			con = DriverManager
-					.getConnection("jdbc:mysql://localhost/autonomos?user=root&password=carlos");
-			String sql = "INSERT INTO form_contato (nome, email, telefone, data, descricao_duvida) values (?, ?, ?, ?, ?)";
-			ps = con.prepareStatement(sql);
+			con = DriverManager.getConnection(url);
+			PreparedStatement ps = con.prepareStatement(sql);
+			
 			ps.setString(1, nome);
 			ps.setString(2, email);
 			ps.setString(3, telefone);
@@ -39,7 +38,6 @@ public class ConnectionFomularioContato {
 			e.printStackTrace();
 
 		} finally {
-			ps.close();
 			con.close();
 		}
 		return con;
