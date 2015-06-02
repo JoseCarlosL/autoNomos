@@ -1,6 +1,7 @@
 package br.com.autonomos.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -34,7 +35,9 @@ public class ServletLoginUsuario extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+		
+		PrintWriter out = response.getWriter();
+		
 		ConnectionValidaLoginUsuario valida = new ConnectionValidaLoginUsuario();
 		
 		List<Usuario> usuario = null;
@@ -43,13 +46,15 @@ public class ServletLoginUsuario extends HttpServlet {
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
 				
-		if(email.equals("carlos@carlos")){
+		
+		
+		if(email.indexOf("@") != -1){
 			
 			try {
 				usuario = valida.verificarUsuario(email, senha);
 				System.out.println(usuario.toString());
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, e.getMessage());
+				e.printStackTrace();
 			}
 			
 			for (Usuario u : usuario) {
@@ -57,7 +62,8 @@ public class ServletLoginUsuario extends HttpServlet {
 					String url = "http://localhost:8080/ClasseWeb/plataformaUsuario.jsp";
 					response.sendRedirect(url);
 				} else {
-					System.out.println("nao foi");
+					String url = "http://localhost:8080/ClasseWeb/plataformaUsuario.jsp";
+					response.sendRedirect(url);
 				}
 			}
 			
@@ -78,5 +84,8 @@ public class ServletLoginUsuario extends HttpServlet {
 				}
 			}
 		}
+		
+		JOptionPane.showMessageDialog(null, "Usuario ou Senha incorreto");
+		response.sendRedirect("http://localhost:8080/ClasseWeb/login.html");
 	}
 }
