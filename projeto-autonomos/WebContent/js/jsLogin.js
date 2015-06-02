@@ -9,3 +9,7 @@ function logout() {
 	}
 
 }
+
+function campoEmBranco(){
+	
+}
