@@ -2,21 +2,21 @@ package br.com.autonomos.modelo;
 
 import java.sql.Date;
 
-public class ConsumoAgua {
+public class RelatorioConsumoEnergia {
 	
 	private Date dataInicial;
 	private Date dataFinal;
-	private double litros;
+	private double kilowatt;
 	private double valor;
 	
-	public ConsumoAgua() {
-		
+	public RelatorioConsumoEnergia() {
+
 	}
 	
-	public ConsumoAgua(Date inicio, Date fim, double lt, double valor){
-		this.dataInicial = inicio;
-		this.dataFinal = fim;
-		this.litros = lt;
+	public RelatorioConsumoEnergia(Date dataInicio, Date dataFim, double kw, double valor){
+		this.dataInicial = dataInicio;
+		this.dataFinal = dataFim;
+		this.kilowatt = kw;
 		this.valor = valor;
 	}
 
@@ -36,12 +36,12 @@ public class ConsumoAgua {
 		this.dataFinal = dataFinal;
 	}
 
-	public double getLitros() {
-		return litros;
+	public double getKilowatt() {
+		return kilowatt;
 	}
 
-	public void setLitros(double litros) {
-		this.litros = litros;
+	public void setKilowatt(double kilowatt) {
+		this.kilowatt = kilowatt;
 	}
 
 	public double getValor() {
@@ -51,4 +51,10 @@ public class ConsumoAgua {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
+	
+	@Override
+	public String toString() {
+		return kilowatt + " " + valor;
+	}
+	
 }

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.autonomos.dao.ConnectionBuscaValorConsumo;
-import br.com.autonomos.modelo.ConsumoAgua;
+import br.com.autonomos.modelo.RelatorioConsumoAgua;
 
 public class ControladorConsumoAgua {
 	
@@ -25,7 +25,7 @@ public class ControladorConsumoAgua {
 		return instace;
 	}
 	
-	public List<ConsumoAgua> procurarConsumo(String dataInicio, String dataFinal) throws SQLException{
+	public List<RelatorioConsumoAgua> procurarConsumo(String dataInicio, String dataFinal) throws SQLException{
 		return aguaDAO.procurarValorAgua(dataInicio, dataFinal);
 	}
 }

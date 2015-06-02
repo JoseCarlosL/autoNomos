@@ -7,6 +7,15 @@ public class Pessoa {
 	private String email;
 	private String telefone;
 	private Endereco endereco;
+	private String tipoPessoa;
+	
+	public String getTipoPessoa() {
+		return tipoPessoa;
+	}
+
+	public void setTipoPessoa(String tipoPessoa) {
+		this.tipoPessoa = tipoPessoa;
+	}
 
 	public Pessoa(int id, String nome, String email, String telefone,
 			Endereco endereco) {

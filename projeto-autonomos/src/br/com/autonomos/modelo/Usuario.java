@@ -8,6 +8,7 @@ public class Usuario extends Pessoa {
 	public Usuario(String senha, int id, String nome, String email,
 			String telefone, Endereco endereco) {
 		super(id, nome, email, telefone, endereco);
+		super.setTipoPessoa("usuario");
 		this.senha = senha;
 
 	}
@@ -42,7 +43,7 @@ public class Usuario extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return email + " , " + senha;
+		return email + " , " + senha + " , " + super.getTipoPessoa();
 	}
 
 }
