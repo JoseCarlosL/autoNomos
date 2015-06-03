@@ -47,7 +47,7 @@
 
 		<div id='cssmenu'>
 			<ul>
-				<li><a href='iluminacao.html' target="mainframe"><span>Controle
+				<li><a href='index.html' target="mainframe"><span>Controle
 							de iluminação</span></a></li>
 				<li class='active has-sub'><a href='relatorioAgua.jsp'
 					target="mainframe"><span>Consumo de água</span></a>
@@ -57,7 +57,7 @@
 		</div>
 
 	<div id="content">
-		<iframe id="mainframe" name="mainframe" src="iluminacao.html"
+		<iframe id="mainframe" name="mainframe" src="index.html"
 			allowtransparency="true"></iframe>
 	</div>
 

@@ -48,7 +48,7 @@ public class ServletLoginUsuario extends HttpServlet {
 				
 		
 		
-		if(email.indexOf("@") != -1){
+		if(email.endsWith("carlos@carlos")){
 			
 			try {
 				usuario = valida.verificarUsuario(email, senha);

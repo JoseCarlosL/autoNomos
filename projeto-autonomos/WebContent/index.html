@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Arduino com AJAX</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+		<script src="js/jquery.js"></script>
+		<link rel="stylesheet" href="css/style_plat.css" media="all" type="text/css">
+		<link rel="stylesheet" href="css/style2.css" media="all" type="text/css">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<style type="text/css">
+			.clean { padding: 0; margin: 0;}
+		</style>
+	</head>
+<body>
+<div class="container">
+	<div class="row">	
+		<div class="page-header">
+		  <h1>PLATAFORMA DO CLIENTE</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 well">
+			<p>
+				TESTE DA PLATAFORMA DO CLIENTE</a> <br/>
+				TESTE DE LEITURA DOS SENSORES E DO ACIONAMENTO DA ILUMINAÇÃO
+			</p>
+			<p>
+				Status do Sistema <span id="status" class="label"></span>
+			</p>
+			<p>
+				<h4>Consumo de Energia</h4>
+				kWatt/h: <strong><span id="sensor1" ></span></strong><br/>
+				Valor a Pagar: <strong><span id="valorpagar" ></span></strong>
+			</p>
+			<p>
+				<h4>Consumo de Água</h4>
+				m3: <strong><span id="sensor2"></span></strong>
+			</p>
+			<p>
+				<h4>Botões</h4>
+				Botão 1:
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default botaoEnvia" id="001">Liga</button>
+				  <button type="button" class="btn btn-default botaoEnvia" id="002">Desliga</button>
+				</div>
+				<span id="resultLUZ1"></span>
+				<br/>
+				Botão 2:
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default botaoEnvia" id="003">Liga</button>
+				  <button type="button" class="btn btn-default botaoEnvia" id="004">Desliga</button>
+				</div>
+				<span id="resultLUZ2"></span>
+				<br/>
+				Botão 3:
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default botaoEnvia" id="005">Liga</button>
+				  <button type="button" class="btn btn-default botaoEnvia" id="006">Desliga</button>
+				</div>
+				<span id="resultLUZ3"></span>
+				<br/>
+				Botão 4:
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default botaoEnvia" id="007">Liga</button>
+				  <button type="button" class="btn btn-default botaoEnvia" id="008">Desliga</button>
+				</div>
+				<span id="resultLUZ4"></span>
+				<br/>
+				Botão 5:
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default botaoEnvia" id="009">Liga</button>
+				  <button type="button" class="btn btn-default botaoEnvia" id="010">Desliga</button>
+				</div>
+				<span id="resultLUZ5"></span>
+			</p>	
+		</div>
+		<div class="col-md-9">
+			<div class="clean" id="chart_div" style="width: 100%; height: 500px;"></div>
+		</div>
+	</div>
+	<div class="row">
+		<p>Github: <a href="https://github.com/rogerin/ArduinoComAjax">rogerin</a> </p>
+	</div>
+</div>
+
+<script type="text/javascript">
+//var url = 'http://177.177.165.14:50';
+var url = 'http://192.168.1.100:1000';
+
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+	var data; 
+	var chart;
+	var options = {
+		title: 'Dados dos Sensores ArduinoComAjax',
+		curveType: 'function'
+	};
+
+$(document).ready(function(){
+	$('.botaoEnvia').click(function(){
+        var valor = $(this).attr('id');
+        enviaDados(valor);
+    });
+	
+	function enviaDados(dado){		
+    	$.ajax({
+		    url: url,
+		    data: { 'acao': dado},
+		    dataType: 'jsonp',
+		    crossDomain: true,
+		    jsonp: false,
+		    jsonpCallback: 'dados',
+		    success: function(data,status,xhr) {
+				// posso ler dados e retoranar na pagina para avisar se a luz ta ligada ou desligada.
+				console.log(data.LUZ1);
+				console.log(data.LUZ2);
+				console.log(data.LUZ3);
+				console.log(data.LUZ4);
+				console.log(data.LUZ5);
+				$('#resultLUZ1').text(statusReturn(data.LUZ1)); 
+				$('#resultLUZ2').text(statusReturn(data.LUZ2));
+				$('#resultLUZ3').text(statusReturn(data.LUZ3)); 
+				$('#resultLUZ4').text(statusReturn(data.LUZ4)); 
+				$('#resultLUZ5').text(statusReturn(data.LUZ5)); 
+		    }
+		  });
+        return false;
+    }
+
+    function statusReturn (valor) {
+    	if(valor == 0) {
+    		return "Ligada";
+    	}
+    	else if(valor == 1) {
+    		return "Desligada";
+    	}
+    	 <!-- else{return"Desconhecido";}-->
+    }
+
+    var i = 0;
+	function fazerRequisicao(){
+		$('#status').removeClass('label-success').addClass('label-warning');
+		$('#status').text("Enviando Requisição...");
+    	$.ajax({
+		    url: url,
+		    data: { '': ''}, // usaremos em proximas versões
+		    dataType: 'jsonp', // IMPORTANTE
+		    crossDomain: true, // IMPORTANTE
+		    jsonp: false,
+		    jsonpCallback: 'dados', // IMPORTANTE
+		    success: function(data,status,xhr) {
+				$('#status').removeClass('label-warning').addClass('label-success')
+				$('#status').text("Requisição Recebida!");
+				$('#sensor1').text(data.sensor1);
+				$('#sensor2').text(data.sensor2);
+				$('#valorpagar').text(data.valorpagar);
+				$('#resultLUZ1').text(statusReturn(data.LUZ1));
+				$('#resultLUZ2').text(statusReturn(data.LUZ2));
+				$('#resultLUZ3').text(statusReturn(data.LUZ3));
+				$('#resultLUZ4').text(statusReturn(data.LUZ4));
+				$('#resultLUZ5').text(statusReturn(data.LUZ5));
+				i++;
+				setGrafico(i,data.sensor1,data.sensor2);
+				console.log(data);
+		    }
+		  });
+        return false;
+    }
+
+    // A cada 1000 milis (1 segundo), faça uma nova requisição.
+    setInterval(fazerRequisicao, 900);
+  	// Acredito que 3000 (3 segundos) ou mais seja o ideal para um serviço online.
+  	// Caso use local host, arrisco colocar ate 400 milis, você tera uma boa resposta. 
+});
+
+	function drawChart() {
+  		data = new google.visualization.DataTable();
+		data.addColumn('number', 'Registro'); // Implicit domain column.
+		data.addColumn('number', 'Sensor1'); // Implicit data column.
+		data.addColumn('number', 'Sensor2'); // Implicit data column.
+		data.addRow();
+    }
+
+	function setGrafico(i, sensor1,sensor2){
+		data.addRow([i,sensor1,sensor2]);
+        chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        return false;
+	}
+  
+</script>
+
+
+</body>
+</html>
+
+
+
+<!--
+<?php
+    //Criando a url para o aquivo json
+    $jsonurl = "http://search.twitter.com/trends.json";
+
+    //Retorna o conteudo do arquivo em formato de string
+    $json = file_get_contents($jsonurl,0,null,null);
+
+    //Decodificando a string e criando o json
+    $json_output = json_decode($json);
+   
+    //Loop para percorrer o json capturando os dados
+    foreach ( $json_output->trends as $trend )
+    {
+        echo '<a href="'.$trend->url.'" target="_blank">'.$trend->name.'</a><br />';
+    }
+?>
+	-->

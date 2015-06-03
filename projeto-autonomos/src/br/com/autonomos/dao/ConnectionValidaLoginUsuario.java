@@ -20,7 +20,6 @@ public class ConnectionValidaLoginUsuario {
 
 	List<Usuario> listUser = new ArrayList<Usuario>();
 	List<Visitante> listVis = new ArrayList<Visitante>();
-	public boolean status = false;
 	
 	public List<Usuario> verificarUsuario(String email, String senha) throws SQLException{
 		String sql = "select email, senha from usuarios where email = (?) and senha = (?)";

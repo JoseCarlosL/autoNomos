@@ -5,18 +5,40 @@
 		<meta charset="UTF-8" />
 		<link href="css/iluminacao.css" type="text/css" rel="stylesheet" />
 		<script src="js/iluminacao.js" type="text/javascript"></script>
+		
+		<script>
+   $(document).onReady(function () {
+      // Evento para o botão "Ligar/Desligar"
+      $('#btn').click(function () {
+         // Através de uma pseudo-classe CSS testamos o estado do botão
+         if ($(this).hasClass('button')) { // Botão está desligado e irá ligar!
+            $('#btnt').val('liga');
+         } else if ($(this).hasClass('turn-off') { // Botão está ligado e irá desligar
+            $('#btnt').val('desliga');
+         }
+
+         $('#meu-form').submit(); // caso esteja realizando uma requisição comum
+      });
+   });
+</script>
+		
 	</head>
 	<body>
+	
 		<div id="comodos">
+	
 			<fieldset>
+			<form id="meu-form">
 				<legend>SALA</legend>
 				<ul>
 					<div id="sala">
-					<li>Luz alta <br><input class="button" type="button" value="Ligar" onclick="ligarSala1();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala1();"/>   <img id="status1" src="img/erro.png" /></li>
+					<li>Luz alta <br><input id = "btn" class="button" type="button" value="Ligar" onclick="ligarSala1();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala1();"/>   <img id="status1" src="img/erro.png" /></li>
+					<input id="btnt" type="hidden" name="acao" value="liga">
 					<li>Luz baixa <br><input class="button" type="button" value="Ligar" onclick="ligarSala2();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala2();"/>  <img id="status2" src="img/erro.png" /></li>
 					<li>Lustre <br><input class="button" type="button" value="Ligar" onclick="ligarSala3();"/> <input class="button2" type="button" value="Desligar" onclick="desligarSala3();"/>  <img id="status3" src="img/erro.png" /></li>
 					</div>	
 				</ul>
+</form>
 			</fieldset>
 			
 			<fieldset>
