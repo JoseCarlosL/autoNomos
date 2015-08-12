@@ -65,7 +65,7 @@
 		%>
 	</table>
 
-	<button id="calcula-imcs" class="botao ">Imprimir Relatório</button>
+	<button id="calcula-imcs" class="botao " onclick="window.print()">Imprimir Relatório</button>
 
 	</section>
 </body>

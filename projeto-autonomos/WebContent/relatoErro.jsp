@@ -13,7 +13,7 @@
 		String categoria = request.getParameter("erro");
 		String descricao = request.getParameter("descricao");
 
-		out.println("Enviado com sucesso.");
+		//out.println("Enviado com sucesso.");
 		ConnectionRelatarErro erro = new ConnectionRelatarErro();
 		erro.coneccaoBDMysqlRelatoErro(categoria, descricao);
 		

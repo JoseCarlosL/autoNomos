@@ -48,7 +48,7 @@ public class ServletLoginUsuario extends HttpServlet {
 				
 		
 		
-		if(email.endsWith("carlos@carlos")){
+		//if(email.indexOf("@") != -1){
 			
 			try {
 				usuario = valida.verificarUsuario(email, senha);
@@ -65,10 +65,10 @@ public class ServletLoginUsuario extends HttpServlet {
 					String url = "http://localhost:8080/ClasseWeb/plataformaUsuario.jsp";
 					response.sendRedirect(url);
 				}
-			}
+			//}
 			
 			
-		} else {
+		/*} else {
 			try {
 				visitante = valida.verificarVisitante(email, senha);
 			} catch (SQLException e) {
@@ -87,5 +87,5 @@ public class ServletLoginUsuario extends HttpServlet {
 		
 		JOptionPane.showMessageDialog(null, "Usuario ou Senha incorreto");
 		response.sendRedirect("http://localhost:8080/ClasseWeb/login.html");
-	}
-}
+	}*/
+}}}

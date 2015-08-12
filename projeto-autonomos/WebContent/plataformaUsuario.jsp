@@ -30,7 +30,7 @@
 	<!-- Header -->
 	<header id="header" class="skel-layers-fixed">
 	<h1>
-		<a href="platClient.html">AutoNomos</a>
+		<a href="plataformaUsuario.jsp">AutoNomos</a>
 	</h1>
 	<nav id="nav">
 	<ul>
@@ -49,8 +49,8 @@
 			<ul>
 				<li><a href='index.html' target="mainframe"><span>Controle
 							de iluminação</span></a></li>
-				<li class='active has-sub'><a href='relatorioAgua.jsp'
-					target="mainframe"><span>Consumo de água</span></a>
+				<li class='active has-sub'><a href='index2.html'
+					target="mainframe"><span>Consumo</span></a>
 				<li class='last'><a href='opcaoRelatorio.jsp'
 					target="mainframe"><span>Relatório</span></a></li>
 			</ul>

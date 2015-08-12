@@ -46,7 +46,7 @@ public class ConnectionValidaLoginUsuario {
 			return listUser;
 	}// verificarUsuario
 	
-	public List<Visitante> verificarVisitante(String CampoEmail, String senha) throws SQLException{
+	/*public List<Visitante> verificarVisitante(String CampoEmail, String senha) throws SQLException{
 		String sql = "select email, senha from usuarios where email = (?) and senha = (?)";
 		String url = "jdbc:mysql://localhost/autonomos?user=root&password=root";
 		Visitante vis = new Visitante();
@@ -69,5 +69,5 @@ public class ConnectionValidaLoginUsuario {
 				conn.close();
 			}
 			return listVis;
-	}
+	}*/
 }
